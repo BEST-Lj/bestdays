@@ -1,0 +1,72 @@
+.diamond,
+.gold,
+.silver {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(40vh, 1fr));
+	align-items: center;
+	justify-content: space-around;
+	gap: 4rem 2rem;
+	margin-bottom: 15vh;
+}
+
+.partner {
+	position: relative;
+	z-index: 1;
+	background-color: white;
+	border-radius: 50%;
+	width: 35vh;
+	height: 35vh;
+	object-fit: contain;
+	display: block;
+	margin: 0 auto;
+	overflow: hidden;
+	border: 8px solid var(--border-color);
+	transition: box-shadow 0.3s ease;
+}
+
+.diamond {
+	--border-color: var(--main-blue);
+}
+
+.gold {
+	--border-color: #d4af37;
+}
+
+.silver {
+	--border-color: #c0c0c0;
+}
+
+.partner:hover {
+	cursor: pointer;
+	transform: scale(1.10);
+	box-shadow: 0 0 70px 25px var(--border-color);
+}
+
+.sponsor-title {
+	font-size: 6vw;
+	font-weight: 700;
+	text-align: center;
+	padding-bottom: 6vh;
+}
+
+#sponsor-info .modal-dialog {
+	width: 60vw;
+	max-width: none;
+}
+
+#sponsor-info .modal-body {
+	text-align: justify;
+}
+
+.close-modal {
+	outline: none;
+	border: none;
+	background: transparent;
+}
+
+@media (max-width: 968px) {
+	#sponsor-info .modal-dialog {
+		width: 95vw;
+	}
+
+}

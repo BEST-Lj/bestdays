@@ -1,0 +1,143 @@
+.proceedings {
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: center;
+	gap: 10vw;
+	padding-bottom: 10vh;
+}
+
+.publications {
+	display: grid;
+	justify-content: center;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 6vw;
+	padding-bottom: 7vh;
+}
+
+#close-modal {
+	background-color: transparent;
+	border: none;
+	outline: none;
+}
+
+#close-modal svg:hover {
+	fill: var(--light-blue);
+}
+
+.pdf-controls {
+	position: absolute;
+	bottom: 2vh;
+	left: 50%;
+	transform: translateX(-50%);
+	z-index: 1000;
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	padding: 8px 16px;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	font-size: 14px;
+}
+
+.pdf-prev-btn,
+.pdf-next-btn {
+	background: none;
+	border: none;
+	color: white;
+	cursor: pointer;
+	font-size: 16px;
+	padding: 4px 8px;
+	border-radius: 4px;
+}
+
+#pdf-view.modal {
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+#pdf-canvas {
+	touch-action: none;
+	display: block;
+	margin: auto;
+	max-height: 90vh;
+	width: auto;
+	height: auto;
+}
+
+.modal-lg .modal-body {
+	max-height: 85vh;
+}
+
+.modal-body {
+	overflow: auto;
+}
+
+#pdf-view .modal-dialog {
+	max-width: 90%;
+	justify-self: center;
+}
+
+#pdf-view .modal-content {
+	background-color: transparent !important;
+	border: none;
+	box-shadow: none;
+}
+
+.publication,
+.proceeding {
+	position: relative;
+	z-index: 1;
+	object-fit: cover;
+	display: block;
+	margin: 0 auto;
+	background-size: cover;
+	background-position: center;
+	width: 100%;
+	height: auto;
+}
+
+.proceeding {
+	height: 65vh;
+}
+
+.publication:hover,
+.proceeding:hover {
+	transform: scale(1.10);
+	box-shadow: 0 0 40px 10px var(--dark-blue);
+}
+
+.pdf-spinner {
+	width: 40px;
+	height: 40px;
+	border: 4px solid #f3f3f3;
+	border-top: 4px solid #3498db;
+	border-radius: 50%;
+	animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@media (max-width: 1180px) {
+	.proceedings {
+		padding-bottom: 20vh;
+		grid-template-columns: auto;
+	}
+
+	.publications {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media (max-width: 768px) {
+	.publications {
+		grid-template-columns: 1fr;
+	}
+}
