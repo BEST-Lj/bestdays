@@ -10,11 +10,6 @@
 	<link rel="stylesheet" href="/src/styles/publications.css">
 	<script type="module" src="/src/publications.ts" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-	<script>
-		pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-		pdfjsLib.disableWebGL = true;
-	</script>
 </head>
 
 <body>
@@ -73,6 +68,17 @@
 			<div class="publications"></div>
 		</div>
 		<div id="pdf-view" class="modal fade" tabindex="-1" role="dialog">
+			<svg id="loading-icon" viewBox="0 0 32 32" width="20vw" height="20vw">
+				<g stroke="none" fill="none" fill-rule="evenodd">
+					<path class="animated-path"
+						d="M26.4,23.9l-6.9-9.4c-0.4-0.5-0.6-1.1-0.6-1.8V8c1.1,0,2-0.9,2-2V4c0-1.1-0.9-2-2-2h-6c-1.1,0-2,0.9-2,2v2c0,1.1,0.9,2,2,2 v4.7c0,0.6-0.2,1.2-0.6,1.8l-6.9,9.4C5.2,24.4,5,25,5,25.7V27c0,1.7,1.3,3,3,3h16c1.7,0,3-1.3,3-3v-1.3C27,25,26.8,24.4,26.4,23.9z M14,15.6c0.6-0.9,1-1.9,1-2.9V8c0-1.1-0.9-2-2-2V4h6v2c-1.1,0-2,0.9-2,2v4.7c0,1.1,0.3,2.1,1,2.9l4.6,6.4H9.4L14,15.6z"
+						stroke="white" stroke-width="1"></path>
+
+					<path class="outline-path"
+						d="M26.4,23.9l-6.9-9.4c-0.4-0.5-0.6-1.1-0.6-1.8V8c1.1,0,2-0.9,2-2V4c0-1.1-0.9-2-2-2h-6c-1.1,0-2,0.9-2,2v2c0,1.1,0.9,2,2,2 v4.7c0,0.6-0.2,1.2-0.6,1.8l-6.9,9.4C5.2,24.4,5,25,5,25.7V27c0,1.7,1.3,3,3,3h16c1.7,0,3-1.3,3-3v-1.3C27,25,26.8,24.4,26.4,23.9z M14,15.6c0.6-0.9,1-1.9,1-2.9V8c0-1.1-0.9-2-2-2V4h6v2c-1.1,0-2,0.9-2,2v4.7c0,1.1,0.3,2.1,1,2.9l4.6,6.4H9.4L14,15.6z"
+						stroke="white" stroke-width="0.5" opacity="0.2"></path>
+				</g>
+			</svg>
 			<div
 				class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl d-flex justify-content-center align-items-center">
 				<div class="modal-content"
@@ -89,20 +95,6 @@
 					</div>
 					<div class="modal-body p-0 justify-content-center align-items-center">
 						<div id="pdf-container" style="overflow: hidden; width: 100%; height: 100%;">
-							<svg viewBox="0 0 304 112">
-								<title>Suzuka</title>
-								<g stroke="none" fill="none" fill-rule="evenodd">
-									<path
-										d="M279.075,42.524h-96.461c-4.112,0-7.434,3.435-7.434,7.661v39.512c0,4.226,3.321,7.661,7.434,7.661 h5.887v84.383l-23.209-28.568c-0.566-0.718-0.905-1.623-0.905-2.565V49.201c0-10.641-8.49-19.283-18.907-19.283h-44.115 c-10.417,0-18.907,8.642-18.907,19.283v105.138c0,0.943-0.301,1.85-0.905,2.565l-62.345,76.76 c-4.754,5.811-5.735,13.7-2.565,20.53c3.132,6.868,9.699,11.094,17.097,11.094h176.086c6.415,3.888,13.811,6.152,21.776,6.152 c23.737,0,43.058-19.812,43.058-44.153V97.356h4.416c4.112,0,7.472-3.435,7.472-7.661V50.182 C286.55,45.956,283.19,42.524,279.075,42.524z"
-										id="suzuka" stroke="currentColor" stroke-width="2"></path>
-								</g>
-							</svg>
-							<div class="square car motion-path-car"
-								style="transform: translateX(189px) translateY(4px);"></div>
-							<div class="pdf-loading-indicator"
-								style="display: none; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 1000;">
-								<div class="pdf-spinner"></div>
-							</div>
 							<div id="pdf-wrapper" style="transform-origin: 0 0;">
 								<canvas id="pdf-canvas"></canvas>
 							</div>

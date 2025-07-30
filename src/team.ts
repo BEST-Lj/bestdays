@@ -62,6 +62,9 @@ for (const person of teamData) {
 
 
 	if (person.linkedIn.length == 0) {
+		outerDiv.addEventListener("mouseenter", () => {
+			outerDiv.style.cursor = "default"
+		});
 		imgDiv.addEventListener("mouseenter", () => {
 			imgDiv.style.border = "3px solid var(--main-blue)";
 		});

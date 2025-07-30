@@ -21,7 +21,7 @@ export interface PDFRenderProps {
 	containerRect: DOMRect | null,
 	canvasRect: DOMRect | null,
 	renderTask: RenderTask | null,
-	leftEdgeX: number | null,
+	pdfLeftEdgeX: number | null,
 	topEdge: number,
 }
 
@@ -31,10 +31,11 @@ export interface PDFProps {
 	pdf: PDFDocumentProxy
 	isRendering: boolean,
 	pageCount: number | null,
-	currPage: number | null,
+	currPage: number,
 }
 
 export interface PDFNavigationProps {
+	parentDiv: HTMLDivElement,
 	prevBtn: HTMLButtonElement,
 	nextBtn: HTMLButtonElement,
 	pageInfo: HTMLSpanElement,
