@@ -16,7 +16,7 @@ const mobileNavbar = document.querySelector('.mobile-navbar') as HTMLDivElement;
 const mobileNavbarBtn = document.querySelector("#phone-menu-btn") as HTMLButtonElement;
 const container = document.querySelector(".container-fluid") as HTMLDivElement;
 
-GlobalWorkerOptions.workerSrc = `/public/assets/other/pdf.worker.mjs`;
+GlobalWorkerOptions.workerSrc = `/assets/other/pdf.worker.mjs`;
 
 let loadingAnimation: JSAnimation | null = null;
 let loadingDrawable: DrawableSVGGeometry[] | null = null;
@@ -396,7 +396,7 @@ pdfNavigationProps.prevBtn.addEventListener('click', async () => {
 		pdfRenderProps.renderTask = null;
 	}
 	pdfProps.isRendering = false;
-	startLoadingAnimation(document.querySelector("#loading-icon .animated-path")!)
+	startLoadingAnimation(document.querySelector("#loading-icon path")!)
 
 	animate(svg.createDrawable('path'), {
 		draw: '0 1',
@@ -416,7 +416,7 @@ pdfNavigationProps.nextBtn.addEventListener('click', async () => {
 		pdfRenderProps.renderTask.cancel();
 		pdfRenderProps.renderTask = null;
 	}
-	startLoadingAnimation(document.querySelector("#loading-icon .animated-path")!)
+	startLoadingAnimation(document.querySelector("#loading-icon path")!)
 
 	animate(svg.createDrawable('path'), {
 		draw: '0 1',
@@ -603,7 +603,7 @@ publicationsData.forEach(publication => {
 
 	div.addEventListener("click", () => {
 		renderPDF(publication.pdf);
-		startLoadingAnimation(document.querySelector("#loading-icon .animated-path")!)
+		startLoadingAnimation(document.querySelector("#loading-icon path")!)
 
 		pdfWrapper.style.transform = `scale(1)`;
 		canvas.style.display = "block";
