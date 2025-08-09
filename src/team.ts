@@ -42,7 +42,7 @@ window.addEventListener('scroll', () => {
 	lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });
 for (const person of teamData) {
-	const outerDiv = document.createElement('div');
+	/* const outerDiv = document.createElement('div');
 	const imgDiv = document.createElement('div');
 	const img = document.createElement('img');
 	const label = document.createElement('label');
@@ -63,7 +63,7 @@ for (const person of teamData) {
 
 	if (person.linkedIn.length == 0) {
 		outerDiv.addEventListener("mouseenter", () => {
-			outerDiv.style.cursor = "default"
+			outerDiv.style.cursor = ""
 		});
 		imgDiv.addEventListener("mouseenter", () => {
 			imgDiv.style.border = "3px solid var(--main-blue)";
@@ -73,5 +73,27 @@ for (const person of teamData) {
 		outerDiv.addEventListener('click', () => {
 			window.open(person.linkedIn);
 		});
-	}
+	} */
+
+	const imgDiv = document.createElement('div') as HTMLDivElement;
+	const img = document.createElement('img') as HTMLImageElement;
+	const labelDiv = document.createElement('div') as HTMLDivElement;
+	const label = document.createElement("label") as HTMLLabelElement;
+
+	imgDiv.className = "img-div";
+	img.src = person.asset;
+	img.alt = person.name;
+
+	label.innerHTML = `${person.job}<br><b>${person.name}</b>`;
+
+	labelDiv.className = "person-label-div";
+	labelDiv.appendChild(label);
+
+	imgDiv.appendChild(img);
+	imgDiv.appendChild(labelDiv);
+	teamDiv.appendChild(imgDiv);
+
+	imgDiv.addEventListener('click', () => {
+		window.open(person.linkedIn);
+	});
 }
