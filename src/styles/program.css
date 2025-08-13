@@ -1,6 +1,106 @@
-.program {
-	border-radius: 20px;
-	background-color: #ffffff55;
-	padding: 15vh 5vh 3vh 5vh;
-	margin-bottom: 6vh;
+.main-div {
+	margin: 15vh 50% 5vh 50%;
+	width: 500px;
+	height: auto;
+	text-align: left;
+	transform: translateX(-50%);
+}
+
+html {
+	background-image:
+		url("/assets/program/bg-svg.svg"),
+		linear-gradient(148deg, var(--dark-blue), var(--main-blue), var(--light-blue));
+	background-repeat: no-repeat;
+	background-size: cover, cover;
+	background-position: calc(100% + 40vw) 65%, center;
+	background-blend-mode: overlay;
+	transition: background-position 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.footer {
+	position: absolute;
+	bottom: 0px;
+	display: flex;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.main-div button {
+	padding: 0;
+	background-color: transparent;
+	border: none;
+	outline: none;
+}
+
+.above-poster {
+	margin-bottom: 20px;
+}
+
+.above-poster>* {
+	margin-bottom: 0;
+	margin-left: 0.5vh;
+}
+
+.poster {
+	opacity: 0;
+	transform: translateY(20px);
+	position: absolute;
+	width: 100%;
+	background-color: color-mix(in srgb, var(--dark-blue), transparent 35%);
+	border-radius: 15px;
+	transition: opacity 0.2s ease, transform 0.6s ease;
+	pointer-events: none;
+}
+
+.poster.active {
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: auto;
+}
+
+.content {
+	margin-left: 1vw;
+}
+
+.poster ul {
+	padding-left: 1.5vw;
+}
+
+.poster li {
+	list-style-type: none;
+}
+
+.poster h2 {
+	margin-bottom: 0px;
+}
+
+.navigation {
+	align-self: center;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	padding-bottom: 1vh;
+}
+
+.date {
+	margin-top: 10px;
+	margin-bottom: 0px;
+	justify-self: center;
+	width: fit-content;
+}
+
+.back {
+	justify-self: left;
+	margin: 5px 0px 0px 10px;
+}
+
+.next {
+	justify-self: right;
+	margin: 5px 10px 0px 0px;
+}
+
+
+@media (max-width: 600px) {
+	.main-div {
+		width: 400px;
+	}
 }

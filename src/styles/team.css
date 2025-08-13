@@ -1,3 +1,90 @@
+html {
+	background-image:
+		url("/assets/team/bg.svg"),
+		linear-gradient(148deg, var(--dark-blue), var(--main-blue), var(--light-blue));
+	position: relative;
+	background-repeat: no-repeat, no-repeat;
+	background-size: 70%, cover;
+	background-blend-mode: soft-light;
+	background-position:
+		calc(100% + 20vw) calc(100% + 50vh),
+		center;
+}
+
+
+.background-content {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	overflow: hidden;
+}
+
+.background-content image {
+	width: 100%;
+	height: 100%;
+}
+
+.chem-icon {
+	position: absolute;
+
+	top: -60vh;
+	left: -25vw;
+
+	transform: rotate(15deg);
+
+	height: 125%;
+	filter: contrast(140%) brightness(60%);
+}
+
+/* .chip-icon {
+	position: absolute;
+
+	bottom: -20vh;
+	right: -25vw;
+	height: 70%;
+
+	mix-blend-mode: overlay;
+} */
+
+
+.join-best {
+	position: relative;
+	margin: auto;
+	height: 30vh;
+	width: 50%;
+	background-color: #ffffff40;
+	border-radius: 15px;
+}
+
+.join-best p {
+	padding: 10px 15px;
+}
+
+.join-best h3 {
+	position: absolute;
+	text-align: center;
+	width: 70%;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
+.join-best #join-btn {
+	outline: none;
+	border: none;
+	border-radius: 15px;
+	padding: 8px 15px;
+	background: #bd9732;
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 2vh;
+	font-size: 12px;
+}
+
 .team-div {
 	display: grid;
 	grid-template-columns: auto auto auto auto;

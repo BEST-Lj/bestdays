@@ -2,11 +2,20 @@
 .gold,
 .silver {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(40vh, 1fr));
-	align-items: center;
-	justify-content: space-around;
+	grid-template-columns: repeat(auto-fit, minmax(300px, max-content));
 	gap: 4rem 2rem;
+	place-content: center;
 	margin-bottom: 15vh;
+}
+
+.diamond .partner {
+	width: 300px;
+	height: 300px;
+}
+
+.gold .partner {
+	width: 275px;
+	height: 275px;
 }
 
 .partner {
@@ -14,8 +23,8 @@
 	z-index: 1;
 	background-color: white;
 	border-radius: 50%;
-	width: 35vh;
-	height: 35vh;
+	width: 250px;
+	height: 250px;
 	object-fit: contain;
 	display: block;
 	margin: 0 auto;
@@ -46,7 +55,7 @@
 	font-size: 6vw;
 	font-weight: 700;
 	text-align: center;
-	padding-bottom: 6vh;
+	padding-bottom: 3vh;
 }
 
 #sponsor-info .modal-dialog {
