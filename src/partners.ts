@@ -5,6 +5,7 @@ const silverDiv = document.querySelector(".silver") as HTMLDivElement;
 import partnersData from "./json/partners.json";
 const modalTitle = document.querySelector(".modal-title") as HTMLDivElement;
 const modalBody = document.querySelector(".modal-body") as HTMLDivElement;
+const modalHeader = document.querySelector(".modal-header") as HTMLDivElement;
 
 let lastScrollTop = 0;
 const navbar = document.querySelector('.navbar') as HTMLDivElement;
@@ -56,8 +57,10 @@ for (const partnerData of partnersData) {
 	img.setAttribute("data-bs-target", "#sponsor-info");
 
 	img.addEventListener("click", () => {
-		modalTitle.innerText = partnerData.name;
 		modalBody.innerHTML = partnerData.info;
+		modalHeader.style.backgroundImage = `linear-gradient(var(--dark-blue), var(--dark-blue)), url(${partnerData?.asset_modal ?? partnerData.asset})`;
+		modalHeader.style.backgroundRepeat = "no-repeat";
+		modalHeader.style.backgroundSize = "contain";
 	});
 
 	switch (partnerData.grade) {

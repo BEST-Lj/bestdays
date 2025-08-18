@@ -6,15 +6,18 @@
 	transform: translateX(-50%);
 }
 
-html {
-	background-image:
-		url("/assets/program/bg-svg.svg"),
-		linear-gradient(148deg, var(--dark-blue), var(--main-blue), var(--light-blue));
-	background-repeat: no-repeat;
-	background-size: cover, cover;
-	background-position: calc(100% + 40vw) 65%, center;
-	background-blend-mode: overlay;
-	transition: background-position 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+.chem-icon {
+	position: absolute;
+
+	left: 65vw;
+	top: -35vh;
+
+	transform: rotate(15deg);
+	transition: top 0.8s cubic-bezier(0.25, 0.25, 0.75, 1),
+		left 0.8s cubic-bezier(0.25, 0.25, 0.75, 1);
+
+	height: 125%;
+	filter: contrast(140%) brightness(60%);
 }
 
 .footer {
@@ -98,6 +101,11 @@ html {
 	margin: 5px 10px 0px 0px;
 }
 
+@media (max-width: 900px) {
+	.chem-icon {
+		transform: rotate(-10deg);
+	}
+}
 
 @media (max-width: 600px) {
 	.main-div {

@@ -41,3 +41,15 @@ export interface PDFNavigationProps {
 	pageInfo: HTMLSpanElement,
 }
 
+
+export interface Coords {
+	x?: string,
+	y?: string,
+}
+
+export interface TransitionProps {
+	element: HTMLElement,
+	event: EventListener,
+	coords: Coords,
+	cssTransition: string,
+}

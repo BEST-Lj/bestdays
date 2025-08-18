@@ -33,6 +33,29 @@
 	transition: box-shadow 0.3s ease;
 }
 
+.modal-content {
+	background-color: var(--dark-blue);
+	background-blend-mode: overlay;
+}
+
+.modal-header {
+	position: relative;
+	background-blend-mode: color-dodge;
+	background-position: center;
+	margin: 15px 0px;
+}
+
+
+.modal-background-image {
+	position: absolute;
+	z-index: 0;
+	opacity: 0.6;
+	height: 100%;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+}
+
 .diamond {
 	--border-color: var(--main-blue);
 }

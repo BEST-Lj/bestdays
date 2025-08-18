@@ -7,7 +7,7 @@ html {
 	background-size: 70%, cover;
 	background-blend-mode: soft-light;
 	background-position:
-		calc(100% + 20vw) calc(100% + 50vh),
+		calc(100% + 25vw) calc(100% + 10vh),
 		center;
 }
 
@@ -30,25 +30,14 @@ html {
 .chem-icon {
 	position: absolute;
 
-	top: -60vh;
-	left: -25vw;
+	top: -40vh;
+	left: -15vw;
 
 	transform: rotate(15deg);
 
-	height: 125%;
+	height: 180vh;
 	filter: contrast(140%) brightness(60%);
 }
-
-/* .chip-icon {
-	position: absolute;
-
-	bottom: -20vh;
-	right: -25vw;
-	height: 70%;
-
-	mix-blend-mode: overlay;
-} */
-
 
 .join-best {
 	position: relative;
@@ -186,16 +175,46 @@ html {
 	.team-div {
 		grid-template-columns: auto auto auto;
 	}
+
+	html {
+		background-position:
+			calc(100% + 25vw) 90%,
+			center;
+	}
+
+	.chem-icon {
+		position: absolute;
+
+		top: -40vh;
+		left: -24vw;
+
+		transform: rotate(15deg);
+
+		height: 180vh;
+		filter: contrast(140%) brightness(60%);
+	}
 }
 
 @media (max-width: 1024px) {
 	.team-div {
 		grid-template-columns: 1fr 1fr;
 	}
+
+	.chem-icon {
+		display: none;
+	}
+
+	html {
+		background-size: 0%, cover;
+	}
 }
 
 @media (max-width: 768px) {
 	.team-div {
 		grid-template-columns: 1fr;
+	}
+
+	.chem-icon {
+		display: none;
 	}
 }
