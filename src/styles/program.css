@@ -1,9 +1,13 @@
 .main-div {
-	margin: 15vh 50% 5vh 50%;
-	width: 500px;
+	display: grid;
+	justify-items: center;
+	align-items: end;
+	align-self: center;
+	padding-top: 10vh;
+	width: auto;
 	height: auto;
 	text-align: left;
-	transform: translateX(-50%);
+	margin: auto auto;
 }
 
 .chem-icon {
@@ -44,7 +48,7 @@
 	margin-left: 0.5vh;
 }
 
-.poster {
+/* .poster {
 	opacity: 0;
 	transform: translateY(20px);
 	position: absolute;
@@ -60,9 +64,32 @@
 	transform: translateY(0);
 	pointer-events: auto;
 }
+*/
 
-.content {
+.poster {
+	opacity: 0.05;
+	/* 	position: absolute; */
+	width: 450px;
+	margin: 2vh;
+	background-color: color-mix(in srgb, var(--dark-blue), transparent 15%);
+	border-radius: 15px;
+	transition: opacity 0.6s ease, transform 0.6s linear;
+	pointer-events: none;
+}
+
+.poster.active {
+	opacity: 1;
+	pointer-events: auto;
+	z-index: 10;
+}
+
+.poster .content {
+	display: none;
 	margin-left: 1vw;
+}
+
+.poster.active .content {
+	display: block;
 }
 
 .poster ul {
@@ -77,11 +104,15 @@
 	margin-bottom: 0px;
 }
 
-.navigation {
+.poster .navigation {
 	align-self: center;
-	display: grid;
-	grid-template-columns: auto auto auto;
+	display: none;
 	padding-bottom: 1vh;
+	grid-template-columns: auto auto auto;
+}
+
+.poster.active .navigation {
+	display: grid;
 }
 
 .date {
@@ -105,10 +136,18 @@
 	.chem-icon {
 		transform: rotate(-10deg);
 	}
+
+	.poster {
+		width: 400px;
+	}
 }
 
 @media (max-width: 600px) {
 	.main-div {
 		width: 400px;
+	}
+
+	.poster {
+		width: 300px;
 	}
 }
