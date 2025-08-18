@@ -3,7 +3,6 @@ const goldDiv = document.querySelector(".gold") as HTMLDivElement;
 const silverDiv = document.querySelector(".silver") as HTMLDivElement;
 
 import partnersData from "./json/partners.json";
-const modalTitle = document.querySelector(".modal-title") as HTMLDivElement;
 const modalBody = document.querySelector(".modal-body") as HTMLDivElement;
 const modalHeader = document.querySelector(".modal-header") as HTMLDivElement;
 

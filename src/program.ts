@@ -6,7 +6,6 @@ const navbar = document.querySelector('.navbar') as HTMLDivElement;
 const mobileNavbar = document.querySelector('.mobile-navbar') as HTMLDivElement;
 const mobileNavbarBtn = document.querySelector("#phone-menu-btn") as HTMLButtonElement;
 const container = document.querySelector(".container-fluid") as HTMLDivElement;
-const html = document.querySelector("html") as HTMLElement;
 const chemIcon = document.querySelector(".chem-icon") as HTMLElement;
 const isMobile = window.innerWidth < 1100;
 
