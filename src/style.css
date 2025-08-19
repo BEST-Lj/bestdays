@@ -178,15 +178,14 @@ body {
 }
 
 .mobile-navbar {
+	scroll-behavior: unset;
 	display: none;
-	transform: translateY(5vh);
 	background-color: var(--dark-blue);
 	width: 100%;
 	position: fixed;
-	z-index: 20;
-	height: 100vh;
-	top: 0;
-	margin-top: 5vh;
+	height: 100%;
+	margin: auto 0;
+	z-index: 99;
 	padding: 15vh 0 5vh 0;
 }
 
@@ -194,9 +193,9 @@ body {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 0;
+	margin: auto;
 	text-decoration: none;
-	padding-bottom: 3vh;
+	margin: 5vh 0;
 }
 
 .mobile-navbar h1 {

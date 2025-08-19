@@ -1,15 +1,23 @@
-/* import type { TransitionProps } from "./types"; */
-
 let lastScrollTop = 0;
 let index = 0;
-const mainDiv = document.querySelector('.main-div') as HTMLDivElement;
 const navbar = document.querySelector('.navbar') as HTMLDivElement;
 const mobileNavbar = document.querySelector('.mobile-navbar') as HTMLDivElement;
 const mobileNavbarBtn = document.querySelector("#phone-menu-btn") as HTMLButtonElement;
 const container = document.querySelector(".container-fluid") as HTMLDivElement;
-const footer = document.querySelector(".footer") as HTMLDivElement;
-/* const chemIcon = document.querySelector(".chem-icon") as HTMLElement;
-const isMobile = window.innerWidth < 1100; */
+const abovePoster = document.querySelector(".above-poster") as HTMLDivElement;
+
+let translateStep: number
+
+if (window.innerWidth > 1400) {
+	translateStep = 30;
+}
+else if (window.innerWidth > 800) {
+	translateStep = 25;
+}
+else {
+	translateStep = 20;
+}
+
 
 mobileNavbarBtn.addEventListener("click", () => {
 	if (mobileNavbar.style.display == "none") {
@@ -34,13 +42,17 @@ const nextBtns = document.querySelectorAll(".next") as NodeListOf<HTMLButtonElem
 
 posters[index].classList.add('active');
 
+const posterRect = posters[index].getBoundingClientRect()
+abovePoster.style.marginLeft = posterRect.left + "px";
+
 let maxHeight: number = 0;
+
 for (const poster of posters) {
 	const index = parseInt(poster.getAttribute("index")!);
 	poster.style.height = 'auto';
 	maxHeight = Math.max(maxHeight, poster.clientHeight);
 
-	poster.style.transform = `translateX(${-index * 30}px) scale(${index == 0 ? 1.0 : 1 - (index * 0.05)})`;
+	poster.style.transform = `translateX(${-index * translateStep}px) scale(${index == 0 ? 1.0 : 1 - (index * 0.05)})`;
 
 	if (index != 0) {
 		poster.style.opacity = `${(1 / index) * 0.4}`;
@@ -49,16 +61,17 @@ for (const poster of posters) {
 	}
 }
 
-const mainDivRect = mainDiv.getBoundingClientRect();
-footer.style.top = mainDivRect.bottom + "px";
-
+/* const mainDivRect = mainDiv.getBoundingClientRect();
+footer.style.top = mainDivRect.bottom + "px"; */
 
 
 posters.forEach(p => {
-	p.style.height = maxHeight - 10 + 'px';
+	p.style.height = maxHeight + 'px';
 });
 
-function posterOrientationSwitch(next: boolean, translateStep = 30) {
+
+
+function posterOrientationSwitch(next: boolean) {
 	let newIndex: number;
 	for (const poster of posters) {
 		const oldIndex = parseInt(poster.getAttribute("index")!);
