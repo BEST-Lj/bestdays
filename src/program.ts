@@ -1,146 +1,103 @@
-let lastScrollTop = 0;
-let index = 0;
-const navbar = document.querySelector('.navbar') as HTMLDivElement;
-const mobileNavbar = document.querySelector('.mobile-navbar') as HTMLDivElement;
-const mobileNavbarBtn = document.querySelector("#phone-menu-btn") as HTMLButtonElement;
-const container = document.querySelector(".container-fluid") as HTMLDivElement;
-const abovePoster = document.querySelector(".above-poster") as HTMLDivElement;
+import "./toolbar.ts"
+import articleJson from "./json/program.json";
+import { animate, type AnimationParams } from "animejs";
 
-let translateStep: number
+const articlesDiv = document.querySelector(".articles") as HTMLDivElement;
 
-if (window.innerWidth > 1400) {
-	translateStep = 30;
-}
-else if (window.innerWidth > 800) {
-	translateStep = 25;
-}
-else {
-	translateStep = 20;
-}
+const prevArticle = document.querySelector(".prev-article") as HTMLButtonElement;
+const nextArticle = document.querySelector(".next-article") as HTMLButtonElement;
 
+function switchArticle(next: boolean) {
+	for (const article of articlesDiv.children) {
+		const oldIndex = parseInt(article.getAttribute("index")!);
+		const articlesLen = articlesDiv.children.length;
 
-mobileNavbarBtn.addEventListener("click", () => {
-	if (mobileNavbar.style.display == "none") {
-		mobileNavbar.style.display = "block";
-		container.style.display = "none";
-	}
-	else {
-		mobileNavbar.style.display = "none";
-		container.style.display = "block";
-	}
-});
+		const newIndex = next ? (oldIndex + 1) % articlesLen : (oldIndex - 1 + articlesLen) % articlesLen;
 
-for (const aElem of mobileNavbar.children as HTMLCollectionOf<HTMLLinkElement>) {
-	aElem.addEventListener("click", () => {
-		mobileNavbar.style.display = "none";
-	});
-}
-
-const posters = document.querySelectorAll(".poster") as NodeListOf<HTMLDivElement>;
-const prevBtns = document.querySelectorAll(".back") as NodeListOf<HTMLButtonElement>;
-const nextBtns = document.querySelectorAll(".next") as NodeListOf<HTMLButtonElement>;
-
-posters[index].classList.add('active');
-
-const posterRect = posters[index].getBoundingClientRect()
-abovePoster.style.marginLeft = posterRect.left + "px";
-
-let maxHeight: number = 0;
-
-for (const poster of posters) {
-	const index = parseInt(poster.getAttribute("index")!);
-	poster.style.height = 'auto';
-	maxHeight = Math.max(maxHeight, poster.clientHeight);
-
-	poster.style.transform = `translateX(${-index * translateStep}px) scale(${index == 0 ? 1.0 : 1 - (index * 0.05)})`;
-
-	if (index != 0) {
-		poster.style.opacity = `${(1 / index) * 0.4}`;
-		poster.classList.remove('active');
-		poster.style.position = "absolute";
-	}
-}
-
-/* const mainDivRect = mainDiv.getBoundingClientRect();
-footer.style.top = mainDivRect.bottom + "px"; */
-
-
-posters.forEach(p => {
-	p.style.height = maxHeight + 'px';
-});
-
-
-
-function posterOrientationSwitch(next: boolean) {
-	let newIndex: number;
-	for (const poster of posters) {
-		const oldIndex = parseInt(poster.getAttribute("index")!);
-		if (next) {
-			newIndex = (oldIndex - 1 + posters.length) % posters.length;
-		}
-		else {
-			newIndex = (oldIndex + 1) % posters.length;
-		}
-
-		poster.setAttribute("index", `${newIndex}`);
-
-		poster.style.transform = `translateX(${-newIndex * translateStep}px) scale(${newIndex == 0 ? 1.0 : 1 - (newIndex * 0.05)})`;
-
+		article.setAttribute("index", `${newIndex}`);
 
 		if (newIndex == 0) {
-			poster.classList.add('active');
-			poster.style.opacity = "";
-			poster.style.position = "";
+			(article as HTMLElement).style.pointerEvents = "auto";
+			const animation = animate(article, {
+				duration: 1000,
+				ease: "linear",
+				autoplay: false,
+				translateX: next ? [-200, -150, -100, -50, 0] : [200, 150, 100, 50, 0],
+				opacity: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
+			} as AnimationParams);
+			animation.play();
 		}
-		else {
-			if (oldIndex == 0) {
-				poster.style.opacity = `${(1 / newIndex) * 0.4} `;
-				poster.classList.remove('active');
-			}
-			poster.style.position = "absolute";
+		else if (oldIndex == 0) {
+			(article as HTMLElement).style.pointerEvents = "none";
+			const animation = animate(article, {
+				duration: 600,
+				ease: "linear",
+				autoplay: false,
+				translateX: next ? [0, 50, 100, 150, 200] : [0, -50, -100, -150, -200],
+				opacity: [0.75, 0.5, 0.25, 0, 0],
+			} as AnimationParams);
+			animation.play();
 		}
 	}
 }
 
+prevArticle.addEventListener("click", (_) => switchArticle(false));
+nextArticle.addEventListener("click", (_) => switchArticle(true));
 
-nextBtns.forEach((btn) => btn.addEventListener("click", async () => {
-	index = (index + 1) % posters.length;
-	posterOrientationSwitch(true);
+for (let i = 0; i < articleJson.length; i++) {
+	const article = document.createElement("article") as HTMLDivElement;
+	article.setAttribute("index", `${i}`);
 
-	resetInterval();
-}));
+	const dateDiv = document.createElement("div") as HTMLDivElement;
+	dateDiv.className = "date-div";
+	const date = document.createElement("h2") as HTMLElement;
+	date.innerText = articleJson[i].date;
+	date.className = "date";
 
-prevBtns.forEach((btn) => btn.addEventListener("click", async () => {
-	index = (index - 1 + posters.length) % posters.length;
-	posterOrientationSwitch(false);
+	dateDiv.appendChild(date);
 
-	resetInterval();
-}));
+	const type = document.createElement("h5") as HTMLElement;
+	type.innerText = articleJson[i].type;
+	type.className = "type";
 
-function resetInterval() {
-	clearInterval(intervalId);
-	intervalId = setInterval(setVisiblePoster, 15000);
+	const title = document.createElement("h1") as HTMLElement;
+	title.innerText = articleJson[i].title;
+	title.className = "title";
+
+	const p = document.createElement("p") as HTMLParagraphElement;
+	p.innerHTML = articleJson[i].body;
+	p.className = "body";
+
+	const buttonsDiv = document.createElement("div") as HTMLDivElement;
+	buttonsDiv.className = "article-buttons";
+
+	const readMore = document.createElement("button") as HTMLButtonElement;
+	readMore.type = "button";
+	readMore.className = "read-more";
+	readMore.innerText = "PREBERI VEČ";
+
+	const enroll = document.createElement("button") as HTMLButtonElement;
+	enroll.type = "button";
+	enroll.className = "enroll";
+	enroll.innerText = "PRIJAVI SE";
+
+	buttonsDiv.append(enroll, readMore);
+
+	article.append(dateDiv, type, title, p, buttonsDiv);
+	articlesDiv.appendChild(article);
+
+	if (article.getAttribute("index") == "0")
+		article.style.opacity = "1.0";
 }
 
-let intervalId = setInterval(setVisiblePoster, 15000);
+window.addEventListener("DOMContentLoaded", () => {
+	const params = new URLSearchParams(window.location.search);
+	const activeInd = params.get("active-article");
 
-async function setVisiblePoster() {
-	posterOrientationSwitch(true)
-}
-
-window.addEventListener('scroll', () => {
-	const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-	if (currentScroll <= 0) {
-		navbar.style.opacity = '1';
-		return;
+	if (activeInd == "1") {
+		switchArticle(true);
 	}
-
-	if (currentScroll > lastScrollTop && mobileNavbar.style.display != "block") {
-		navbar.style.opacity = '0';
-	} else {
-		navbar.style.opacity = '1';
+	else if (activeInd == "2") {
+		switchArticle(false);
 	}
-
-	lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
 });

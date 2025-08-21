@@ -1,3 +1,4 @@
+import "./toolbar.ts"
 import { animate, JSAnimation, svg, type DrawableSVGGeometry } from "animejs";
 import publicationsData from "./json/publications.json";
 import type { PDFMouseProps, PDFNavigationProps, PDFProps, PDFRenderProps, PDFTouchProps } from "./types";
@@ -9,12 +10,6 @@ const pdfView = document.querySelector("#pdf-view") as HTMLIFrameElement;
 const pdfWrapper = document.getElementById("pdf-wrapper")!;
 const pdfContainer = document.querySelector("#pdf-container") as HTMLDivElement;
 const loadingIndicator = document.querySelector("#loading-icon") as HTMLElement;
-
-let lastScrollTop = 0;
-const navbar = document.querySelector('.navbar') as HTMLDivElement;
-const mobileNavbar = document.querySelector('.mobile-navbar') as HTMLDivElement;
-const mobileNavbarBtn = document.querySelector("#phone-menu-btn") as HTMLButtonElement;
-const container = document.querySelector(".container-fluid") as HTMLDivElement;
 
 GlobalWorkerOptions.workerSrc = `/assets/other/pdf.worker.mjs`;
 
@@ -54,24 +49,6 @@ const pdfNavigationProps = {
 	nextBtn: document.querySelector(".pdf-next-btn") as HTMLButtonElement,
 	pageInfo: document.querySelector(".pdf-pages-info") as HTMLSpanElement,
 } as PDFNavigationProps;
-
-
-mobileNavbarBtn.addEventListener("click", () => {
-	if (mobileNavbar.style.display == "none") {
-		mobileNavbar.style.display = "block";
-		container.style.display = "none";
-	}
-	else {
-		mobileNavbar.style.display = "none";
-		container.style.display = "block";
-	}
-});
-
-for (const aElem of mobileNavbar.children as HTMLCollectionOf<HTMLLinkElement>) {
-	aElem.addEventListener("click", () => {
-		mobileNavbar.style.display = "none";
-	});
-}
 
 const canvas = document.getElementById("pdf-canvas") as HTMLCanvasElement;
 const ctx = canvas.getContext("2d");
@@ -571,23 +548,6 @@ async function renderPDF(url: string) {
 		}
 	});
 };
-
-window.addEventListener('scroll', () => {
-	const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-
-	if (currentScroll <= 0) {
-		navbar.style.opacity = '1';
-		return;
-	}
-
-	if (currentScroll > lastScrollTop && mobileNavbar.style.display != "block") {
-		navbar.style.opacity = '0';
-	} else {
-		navbar.style.opacity = '1';
-	}
-
-	lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-});
 
 publicationsData.forEach(publication => {
 	const div = document.createElement("div") as HTMLDivElement;

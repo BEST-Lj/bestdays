@@ -4,6 +4,12 @@
 	--main-blue: #0044AA;
 }
 
+button {
+	outline: none;
+	border: none;
+	background: transparent;
+}
+
 @font-face {
 	font-family: jost;
 	src: url("/assets/other/font/Jost-Regular.ttf");
@@ -31,6 +37,7 @@ body {
 	background: transparent;
 	width: 100%;
 	height: 100%;
+	padding-top: 10vh;
 }
 
 @keyframes rotate-bg-color {
@@ -133,10 +140,6 @@ body {
 	font-size: 16px;
 }
 
-.container-fluid.my-5 {
-	padding-top: 8vh;
-}
-
 .modal-content {
 	background-color: var(--main-blue);
 	color: white;
@@ -186,7 +189,8 @@ body {
 	height: 100%;
 	margin: auto 0;
 	z-index: 99;
-	padding: 15vh 0 5vh 0;
+	padding: 5vh 0;
+	text-align: center;
 }
 
 .mobile-navbar a {
@@ -195,7 +199,7 @@ body {
 	justify-content: center;
 	margin: auto;
 	text-decoration: none;
-	margin: 5vh 0;
+	margin: 3.5rem 0;
 }
 
 .mobile-navbar h1 {
