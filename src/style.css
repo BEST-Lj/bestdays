@@ -187,9 +187,7 @@ body {
 	width: 100%;
 	position: fixed;
 	height: 100%;
-	margin: auto 0;
 	z-index: 99;
-	padding: 5vh 0;
 	text-align: center;
 }
 
@@ -199,7 +197,7 @@ body {
 	justify-content: center;
 	margin: auto;
 	text-decoration: none;
-	margin: 3.5rem 0;
+	margin: 4.5rem 0;
 }
 
 .mobile-navbar h1 {
@@ -214,5 +212,17 @@ body {
 	#phone-menu-btn {
 		margin: auto 5vw auto auto;
 		display: block;
+	}
+}
+
+@media (max-width: 900px) {
+	.mobile-navbar a {
+		margin: 4rem 0;
+	}
+}
+
+@media (max-width: 750px) {
+	.mobile-navbar a {
+		margin: 3rem 0;
 	}
 }

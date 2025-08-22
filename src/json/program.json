@@ -4,21 +4,49 @@
     "title": "Interaktivne delavnice",
     "body": "<p>Kratke interaktivne delavnice študentom omogočajo, da znotraj 2 ur pridobijo praktično-uporabne izkušnje in znanja, za kar se jim podeli certifikat. Število mest je omejeno.</p><p>Letos jih prirejamo v sodelovanju s Krko, Novartisom, Pipistrelom in Tehnološkim parkom.</p>",
     "date": "21 & 22 OKT",
-    "submit": "https://docs.google.com/forms/d/e/1FAIpQLSf1K1BFLBpkvdh8g7_oCD4eRCSedIv-a6--0SS_2_GXV9PN6w/viewform"
+    "submit": "https://docs.google.com/forms/d/e/1FAIpQLSf1K1BFLBpkvdh8g7_oCD4eRCSedIv-a6--0SS_2_GXV9PN6w/viewform",
+	"icons": {
+		"chem-icon": {
+			"right": "-400px",
+			"top": "-100px"
+		},
+		"chip": {
+			"left": "-260px",
+			"top": "-175px"
+		}
+	}
   },
   {
 	"type": "HEKATON",
     "title": "Hekaton",
     "body": "<p>Kratke interaktivne delavnice študentom omogočajo, da znotraj 2 ur pridobijo praktično-uporabne izkušnje in znanja, za kar se jim podeli certifikat. Število mest je omejeno.</p><p>Letos jih prirejamo v sodelovanju s Krko, Novartisom, Pipistrelom in Tehnološkim parkom.</p>",
     "date": "21 & 23 OKT",
-    "submit": "https://docs.google.com/forms/d/e/1FAIpQLSf1K1BFLBpkvdh8g7_oCD4eRCSedIv-a6--0SS_2_GXV9PN6w/viewform"
+    "submit": "https://docs.google.com/forms/d/e/1FAIpQLSf1K1BFLBpkvdh8g7_oCD4eRCSedIv-a6--0SS_2_GXV9PN6w/viewform",
+	"icons": {
+		"chip": {
+			"top": "-35px",
+			"left": "50%",
+			"transform": "translateX(-50%)"
+		}
+	}
   },
   {
 	"type": "ŠTUDIJA PRIMERA",
     "title": "Case Study",
     "body": "<p>Na študiji primera (“Case Study”) lahko študenti pokažejo svoje znanje, sposobnosti reševanja problemov in dela v skupini, za kar lahko osvojijo tudi denarne nagrade.</p><p>Organiziramo jo v sodelovanju z Krko.</p>",
     "date": "23 OKT",
-    "submit": "https://docs.google.com/forms/d/e/1FAIpQLSf1K1BFLBpkvdh8g7_oCD4eRCSedIv-a6--0SS_2_GXV9PN6w/viewform"
+    "submit": "https://docs.google.com/forms/d/e/1FAIpQLSf1K1BFLBpkvdh8g7_oCD4eRCSedIv-a6--0SS_2_GXV9PN6w/viewform",
+	"icons": {
+		"chem-icon": {
+			"right": "-400px",
+			"top": "-100px",
+			"transform": "rotate(60deg)"
+		},
+		"chip": {
+			"right": "-260px",
+			"top": "-175px"
+		}
+	}
   }
 ]
 

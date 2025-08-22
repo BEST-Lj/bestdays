@@ -9,11 +9,38 @@ body {
 	align-self: center;
 	position: relative;
 	display: grid;
-	grid-template-columns: minmax(30px, auto) 1fr minmax(30px, auto);
+	grid-template-columns: auto 1fr auto;
 	align-content: center;
 	align-items: center;
 	justify-content: center;
 	justify-content: flex-start;
+}
+
+.chem-icon1 {
+	position: absolute;
+	/* 	opacity: 0; */
+	height: 160%;
+	right: -400px;
+	top: -100px;
+}
+
+.chem-icon2 {
+	position: absolute;
+	height: 160%;
+	left: -1600px;
+	top: 100px;
+	rotate: 0;
+}
+
+.chip-icon1 {
+	position: absolute;
+	height: 100%;
+	left: -275px;
+	top: -175px;
+}
+
+.background-content {
+	z-index: -100;
 }
 
 .prev-article {
@@ -33,11 +60,6 @@ body {
 	align-items: center;
 	justify-content: center;
 	position: relative;
-
-	background-image: url("/assets/team/bg.svg");
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
 }
 
 article {
@@ -52,7 +74,7 @@ article {
 	backdrop-filter: blur(4px);
 	background: rgba(255, 255, 255, 0.15);
 	position: absolute;
-
+	text-align: justify;
 	opacity: 0;
 }
 
@@ -70,7 +92,7 @@ article {
 	padding: 0 2em;
 	border-top-left-radius: 25px;
 	border-bottom-left-radius: 25px;
-	top: 10%;
+	top: 5%;
 	right: 0px;
 	margin: auto 0;
 	background-color: var(--dark-blue);
@@ -116,21 +138,34 @@ article {
 }
 
 .date {
+	font-size: calc(1rem + .6vw);
 	font-weight: 700;
 	margin: 0;
+}
+
+@media (max-width: 1200px) {
+	.background-content svg {
+		opacity: 0;
+	}
 }
 
 @media (max-width: 800px) {
 	.main-div {
 		width: 95%;
+		margin: 0;
 	}
 
-	/* .articles {
-		height: 600px;
-	} */
+	.articles {
+		height: 450px;
+	}
 
-	.type {
-		margin-top: 30px;
+	.date {
+		font-size: calc(0.75rem + .4vw);
+	}
+
+	.date-div {
+		top: 5%;
+		height: 40px;
 	}
 
 	.article-buttons button {
@@ -145,16 +180,24 @@ article {
 }
 
 @media (max-width: 600px) {
+	.main-div {
+		width: 98%;
+	}
+
 	.article-buttons {
 		align-self: center;
 	}
 
-	article {
-		margin: 0;
+	.main-div {
+		grid-template-columns: 30px 1fr 30px;
 	}
 
 	.body {
 		margin-bottom: 8px;
+	}
+
+	article {
+		margin: 0;
 	}
 
 	p {
@@ -167,21 +210,38 @@ article {
 	}
 
 	.date-div {
-		padding: 0 1em;
+		top: 0px;
+		border-radius: 0 15px 0 15px;
 	}
 }
 
 @media (max-width: 500px) {
+	.articles {
+		height: 500px;
+	}
+
 	.article-buttons {
 		min-width: unset;
 	}
 
+	article {
+		padding: 0 1rem;
+	}
+
 	.body {
-		margin-top: 1em;
+		margin: 0 auto;
+	}
+
+	.title {
+		margin: 0;
 	}
 
 	.date {
 		font-size: calc(0.7rem);
+	}
+
+	.date-div {
+		padding: 0 15px;
 	}
 }
 
@@ -189,6 +249,11 @@ article {
 	.article-buttons {
 		justify-content: center;
 		gap: 0.5rem;
+		margin-bottom: 1.25rem;
+	}
+
+	.date-div {
+		padding: 0 5px;
 	}
 
 	.body {

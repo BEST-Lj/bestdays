@@ -1,6 +1,11 @@
 <svg width="1740" height="1740" viewBox="0 0 1740 1740" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<rect width="1740" height="1740" fill="url(#pattern0_279_202)" style="mix-blend-mode:multiply"/>
+<rect width="1740" height="1740" fill="url(#pattern0_279_202)" style="mix-blend-mode:multiply" filter="url(#multiplyFilter)"/>
 <defs>
+	<filter id="multiplyFilter">
+		<feFlood flood-color="#0044aa" result="flood" />
+		<feComposite in="flood" in2="SourceAlpha" operator="in" result="coloredFlood" />
+		<feBlend in="SourceGraphic" in2="coloredFlood" mode="multiply" />
+    </filter>
 <pattern id="pattern0_279_202" patternContentUnits="objectBoundingBox" width="1" height="1">
 <use xlink:href="#image0_279_202" transform="scale(0.000294118)"/>
 </pattern>

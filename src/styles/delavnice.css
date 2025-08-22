@@ -1,0 +1,78 @@
+.main-div {
+	width: 80%;
+	margin: 5rem auto;
+	background-color: var(--dark-blue);
+	border-radius: 15px;
+}
+
+.content {
+	width: 100%;
+	padding: 2rem 0;
+}
+
+.article,
+.buttons-div {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	margin: 3rem 2rem;
+}
+
+.article>div {
+	margin: 0 1rem;
+}
+
+.article> :not(div) {
+	max-width: 550px;
+}
+
+#tablet {
+	width: auto;
+	height: auto;
+	display: block;
+	margin-left: 3rem;
+
+	object-fit: contain;
+	mask: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+	-webkit-mask: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+#everything {
+	width: 400px;
+	justify-self: center;
+	align-self: center;
+}
+
+#magnifying-glass {
+	width: 350px;
+	justify-self: center;
+	align-self: center;
+}
+
+#plane {
+	width: 350px;
+	justify-self: center;
+	align-self: center;
+}
+
+#robot {
+	width: 350px;
+	justify-self: center;
+	align-self: center;
+}
+
+.buttons-div>h2 {
+	margin-left: 2rem;
+}
+
+.buttons-div>div {
+	display: flex;
+}
+
+.enroll {
+	margin: 0 5rem 0 auto;
+	background-color: rgb(92, 181, 255);
+	padding: 1rem;
+	border-radius: 25px;
+	color: var(--dark-blue);
+}

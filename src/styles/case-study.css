@@ -1,0 +1,61 @@
+.main-div {
+	width: 80%;
+	margin: 5rem auto;
+	background-color: var(--dark-blue);
+	border-radius: 15px;
+}
+
+.content {
+	width: 100%;
+	/* 	padding: 2rem 0; */
+	padding-bottom: 2rem;
+}
+
+.article {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+
+	margin-bottom: 2rem;
+}
+
+.article>div {
+	margin: 2rem;
+}
+
+#math-and-dude {
+	max-width: 130%;
+	/* 	object-fit: fill; */
+	display: block;
+	flex-shrink: 0;
+
+	mask-image: linear-gradient(to right,
+			rgba(0, 0, 0, 1) 20%,
+			rgba(0, 0, 0, 0) 75%);
+	-webkit-mask-image: linear-gradient(to right,
+			rgba(0, 0, 0, 1) 20%,
+			rgba(0, 0, 0, 0) 75%);
+	mask-repeat: no-repeat;
+	mask-size: 100% 100%;
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-size: 100% 100%;
+}
+
+.buttons-div {
+	display: flex;
+	margin-bottom: 2rem;
+}
+
+.enroll {
+	margin: 0 5rem 0 auto;
+	background-color: rgb(92, 181, 255);
+	padding: 1rem;
+	border-radius: 25px;
+	color: var(--dark-blue);
+}
+
+#experimental-flask {
+	width: 350px;
+	justify-self: center;
+	align-self: center;
+	margin-bottom: 5%;
+}
