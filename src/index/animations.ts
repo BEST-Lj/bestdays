@@ -13,7 +13,7 @@ export function notebook(pattern: SVGPatternElement, gElement: SVGGElement): Tim
 		translateX: [0, -30, -60, -90],
 	});
 	timeline.add(pattern, {
-		rotate: [0, -5, -10, -15,],
+		rotate: [0, -4, -8, -12,],
 	}, 0);
 
 	timeline.pause();
