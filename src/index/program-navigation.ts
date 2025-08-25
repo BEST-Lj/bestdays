@@ -1,8 +1,8 @@
-import { animate, type AnimationParams } from "animejs";
+import { Timeline } from "animejs";
 import { calculator, keyboard, mouse, notebook, pen } from "./animations";
 const navigationButtons = document.querySelectorAll(".program-navigation button") as NodeListOf<HTMLButtonElement>;
 
-const animations: Record<string, AnimationParams> = {
+const animations: Record<string, Function> = {
 	notebook,
 	pen,
 	calculator,
@@ -10,22 +10,23 @@ const animations: Record<string, AnimationParams> = {
 	mouse
 };
 
-function createAnimation(btn: HTMLButtonElement, pattern: SVGPatternElement) {
-	const patternItem = pattern.id.split("-").pop();
+function createAnimation(btn: HTMLButtonElement, pattern: SVGPatternElement, gElem: SVGGElement) {
+	const patternItem = gElem.id.replace("-g-elem", "").split("-").pop();
 	if (!patternItem) return;
 
-	const params = animations[patternItem];
-	if (!params) return;
+	const timelineFunc = animations[patternItem];
+	if (!timelineFunc) return;
 
-	const animation = animate(pattern, { ...params });
+	const a = timelineFunc(pattern, gElem) as Timeline;
+
 
 	btn.addEventListener("mouseenter", () => {
-		animation.play();
+		a.play();
 	});
 
 	btn.addEventListener("mouseleave", () => {
-		animation.reverse();
-		animation.resume();
+		a.reverse();
+		a.resume();
 	});
 }
 
@@ -54,7 +55,8 @@ for (let i = 0; i < navigationButtons.length; i++) {
 		}).then(() => {
 			const patternElems = svgElem!.querySelectorAll("pattern") as NodeListOf<SVGPatternElement>;
 			for (const pattern of patternElems) {
-				createAnimation(btn, pattern);
+				const gElem = svgElem!.querySelector(`#${pattern.id}-g-elem`) as SVGGElement;
+				createAnimation(btn, pattern, gElem);
 			}
 		});
 }

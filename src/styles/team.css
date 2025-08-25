@@ -77,62 +77,22 @@ html {
 }
 
 .team-div {
-	display: grid;
-	grid-template-columns: auto auto auto auto;
-	gap: 8vw;
-	padding-bottom: 5vh;
-	justify-items: center;
-}
-
-.team {
 	display: flex;
-	border-radius: 15px;
-	background-color: var(--dark-blue);
-	text-align: center;
-	width: 180px;
-	height: 260px;
-	cursor: pointer;
-	flex-direction: column;
-	justify-self: center;
+	flex-wrap: wrap;
+	row-gap: 2vh;
+	column-gap: 4vw;
+	padding-bottom: 5rem;
 	justify-content: center;
-	align-items: center;
-}
-
-.team .img-wrapper {
-	width: 90%;
-	height: 70%;
-	margin: 5% auto;
-	overflow: hidden;
-	border-radius: 15px;
-	border: 3px solid var(--main-blue);
-	position: relative;
-}
-
-.team .img-wrapper:hover {
-	border: 3px solid var(--light-blue);
-}
-
-.team .img-wrapper img {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: auto;
-}
-
-.team label {
-	padding-bottom: 15px;
 }
 
 .img-div {
-	width: 200px;
-	height: 250px;
-	margin-top: 4vh;
+	width: 279px;
+	height: 362px;
+	margin-top: 2vh;
 	overflow: hidden;
 	cursor: pointer;
 	border-radius: 15px;
 	position: relative;
-	background: linear-gradient(90deg, transparent 90%, var(--dark-blue) 100%);
 }
 
 .img-div::after {
@@ -145,22 +105,22 @@ html {
 	background: linear-gradient(180deg, transparent 60%, var(--dark-blue) 100%);
 }
 
+.img-div.has-link:hover::after {
+	background: linear-gradient(180deg, transparent 60%, var(--light-blue) 100%);
+}
+
 .person-label-div {
-	position: relative;
-	top: 65%;
+	position: absolute;
+	bottom: 5%;
 	left: 50%;
 	text-align: center;
 	transform: translateX(-50%);
-	width: 90%;
+	width: 80%;
 	height: auto;
 	background-color: #ffffff40;
 	z-index: 100;
 	border-radius: 15px;
-	padding: 5px;
-}
-
-.img-div:hover::after {
-	background: linear-gradient(180deg, transparent 60%, var(--light-blue) 100%);
+	padding: 0.7em;
 }
 
 .img-div img {
@@ -173,9 +133,12 @@ html {
 }
 
 
+
 @media (max-width: 1400px) {
 	.team-div {
-		grid-template-columns: auto auto auto;
+		/* Equivalent to 3 columns */
+		max-width: calc((279px * 3) + (4vw * 2));
+		margin: 0 auto;
 	}
 
 	html {
@@ -199,7 +162,8 @@ html {
 
 @media (max-width: 1024px) {
 	.team-div {
-		grid-template-columns: 1fr 1fr;
+		max-width: calc((279px * 2) + 4vw);
+		margin: 0 auto;
 	}
 
 	.chem-icon {
@@ -213,7 +177,9 @@ html {
 
 @media (max-width: 768px) {
 	.team-div {
-		grid-template-columns: 1fr;
+		/* Equivalent to 1 column */
+		max-width: 279px;
+		margin: 0 auto;
 	}
 }
 

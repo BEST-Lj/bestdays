@@ -1,40 +1,87 @@
-import type { AnimationParams } from "animejs";
+import { createTimeline, type DefaultsParams, type Timeline } from "animejs";
 
-const baseConfig: AnimationParams = {
+const baseConfig: DefaultsParams = {
 	duration: 800,
 	ease: "linear",
 	autoplay: false,
 };
 
-export const notebook: AnimationParams = {
-	...baseConfig,
-	translateX: [0, -5, -10, -20],
-	rotate: [0, -2, -5, -8],
-};
+export function notebook(pattern: SVGPatternElement, gElement: SVGGElement): Timeline {
+	const timeline = createTimeline({ defaults: baseConfig });
 
-export const pen: AnimationParams = {
-	...baseConfig,
-	translateX: [0, 10, 20, 30],
-	rotate: [0, -4, -8, -11],
-};
+	timeline.add(gElement, {
+		translateX: [0, -30, -60, -90],
+	});
+	timeline.add(pattern, {
+		rotate: [0, -5, -10, -15,],
+	}, 0);
 
-export const calculator: AnimationParams = {
-	...baseConfig,
-	translateX: [0, 2, 4, 6],
-	translateY: [0, -5, -10, -10],
-	rotate: [0, -4, -8, -11],
-};
+	timeline.pause();
 
-export const keyboard: AnimationParams = {
-	...baseConfig,
-	translateX: [0, -20, -35, -45],
-	translateY: [0, 10, 20, 31],
-	rotate: [0, -2, -4, -6],
-};
+	return timeline;
+}
 
-export const mouse: AnimationParams = {
-	...baseConfig,
-	translateX: [0, 70, 140, 165],
-	translateY: [0, -20, -30, -40],
-	rotate: [0, 10, 20, 25],
-};
+export function pen(pattern: SVGPatternElement, gElement: SVGGElement): Timeline {
+	const timeline = createTimeline({ defaults: baseConfig });
+
+	timeline.add(gElement, {
+		translateX: [0, 2, 4, 6],
+		translateY: [0, -5, -7, -9]
+	});
+	timeline.add(pattern, {
+		rotate: [0, -5, -10, -14],
+	}, 0);
+
+	timeline.pause();
+
+	return timeline;
+}
+
+export function calculator(pattern: SVGPatternElement, gElement: SVGGElement): Timeline {
+	const timeline = createTimeline({ defaults: baseConfig });
+
+	timeline.add(gElement, {
+		translateX: [0, 8, 16, 24],
+	});
+	timeline.add(pattern, {
+		rotate: [0, -5, -10, -15],
+	}, 0);
+
+	timeline.pause();
+
+	return timeline;
+}
+
+export function keyboard(pattern: SVGPatternElement, gElement: SVGGElement): Timeline {
+	const timeline = createTimeline({ defaults: baseConfig });
+
+	timeline.add(gElement, {
+		translateX: [0, -16, -32, -50],
+		translateY: [0, -10, -20, -30],
+	});
+	timeline.add(pattern, {
+		rotate: [0, -1, -2, -4],
+	}, 0);
+
+	timeline.pause();
+
+	return timeline;
+}
+
+export function mouse(pattern: SVGPatternElement, gElement: SVGGElement): Timeline {
+	const timeline = createTimeline({ defaults: baseConfig });
+
+	pattern.style.transformOrigin = "center left";
+
+	timeline.add(gElement, {
+		translateX: [0, 10, 20, 30],
+		translateY: [0, -60, -120, -180],
+	});
+	timeline.add(pattern, {
+		rotate: [0, 7, 14, 22],
+	}, 0);
+
+	timeline.pause();
+
+	return timeline;
+}

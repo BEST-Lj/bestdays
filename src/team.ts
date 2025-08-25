@@ -21,7 +21,12 @@ for (const person of teamData) {
 	imgDiv.appendChild(labelDiv);
 	teamDiv.appendChild(imgDiv);
 
-	imgDiv.addEventListener('click', () => {
-		window.open(person.linkedIn);
-	});
+	if (person.linkedIn) {
+		imgDiv.addEventListener('click', () => {
+			window.open(person.linkedIn, '_blank');
+		});
+		imgDiv.classList.add('has-link');
+	} else {
+		imgDiv.classList.remove('has-link');
+	}
 }

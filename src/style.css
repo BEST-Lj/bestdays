@@ -30,13 +30,12 @@ button {
 html {
 	margin: 0;
 	min-height: 100%;
-	background: linear-gradient(148deg, var(--dark-blue), var(--main-blue), var(--light-blue));
 }
 
 body {
-	background: transparent;
-	width: 100%;
-	height: 100%;
+	background: linear-gradient(148deg, var(--dark-blue), var(--main-blue), var(--light-blue));
+	min-width: 100%;
+	min-height: 100%;
 	padding-top: 10vh;
 }
 
@@ -75,64 +74,42 @@ body {
 	justify-self: center;
 }
 
-.best-logo-btn {
-	width: auto;
-	height: 75%;
-	padding: 0;
-	border: none;
-	background: none;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.best-logo-btn svg {
-	width: 100%;
-	height: 100%;
-}
-
-.best-logo {
-	padding-left: 15px;
-	width: 100%;
-	height: 100%;
-	cursor: pointer;
-}
-
-.navbar {
-	display: grid;
-	grid-template-columns: 25vw 75vw;
-	z-index: 999;
-	box-sizing: border-box;
-	color: white;
-	background-color: var(--dark-blue);
-	width: 100%;
-	height: 10vh;
-	padding: 2vh 0px;
-	transition: all .2s;
-	position: fixed;
-	top: 0;
-	inset: 0 0% auto;
-	transition: opacity 0.5s ease-in-out;
-}
-
-.navbar>* {
-	max-height: 100%;
-	width: auto;
-	overflow: hidden;
-}
-
-.nav-pages {
-	gap: 5vw;
-	display: flex;
-	align-content: center;
-}
-
 .navbar a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin: 0;
 	text-decoration: none;
+}
+
+.best-logo-btn {
+	max-height: none;
+	position: absolute;
+	height: 60%;
+	left: 10%;
+}
+
+.navbar {
+	display: flex;
+	z-index: 999;
+	box-sizing: border-box;
+	color: white;
+	background-color: var(--dark-blue);
+	width: 100%;
+	height: 65px;
+	padding: 3rem 0px;
+	transition: all .2s;
+	position: fixed;
+	inset: 0 0 auto 0;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.nav-pages {
+	position: absolute;
+	display: flex;
+	left: 50%;
+	transform: translateX(-50%);
+	gap: 5vw;
 }
 
 .navbar h5 {
@@ -171,9 +148,8 @@ body {
 
 #phone-menu-btn {
 	display: none;
-	background-color: transparent;
-	outline: none;
-	border: none;
+	position: absolute;
+	right: 5vw;
 }
 
 #phone-menu-btn svg:hover {
@@ -210,8 +186,12 @@ body {
 	}
 
 	#phone-menu-btn {
-		margin: auto 5vw auto auto;
 		display: block;
+	}
+
+
+	.best-logo-btn {
+		height: 45%;
 	}
 }
 

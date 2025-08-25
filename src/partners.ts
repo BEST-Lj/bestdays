@@ -16,7 +16,7 @@ for (const partnerData of partnersData) {
 
 	img.addEventListener("click", () => {
 		modalBody.innerHTML = partnerData.info;
-		modalHeader.style.backgroundImage = `linear-gradient(var(--dark-blue), var(--dark-blue)), url(${partnerData.asset})`;
+		modalHeader.style.backgroundImage = `url(${partnerData.asset})`;
 		modalHeader.style.backgroundRepeat = "no-repeat";
 		modalHeader.style.backgroundSize = "contain";
 	});

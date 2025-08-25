@@ -3,66 +3,66 @@
 		"name": "Marcel Tušek",
 		"job": "Glavni organizator",
 		"linkedIn": "https://www.linkedin.com/in/marcel-tu%C5%A1ek-7365a5219/",
-		"asset": "/assets/team/Marcel.jpg"
-	},
-	{
-		"name": "Blaž Bandur",
-		"job": "Stiki z udeleženci",
-		"linkedIn": "https://www.linkedin.com/in/bla%C5%BE-bandur-157b62302",
-		"asset": "/assets/team/Blaž.jpg"
-	},
-	{
-		"name": "Tinkara Korošec",
-		"job": "Program & PR",
-		"linkedIn": "https://www.linkedin.com/in/tinkara-koro%C5%A1ec-035a71261/",
-		"asset": "/assets/team/Tinkara.jpg"
-	},
-	{
-		"name": "Katarina Levec",
-		"job": "Ekipa za program",
-		"linkedIn": "http://www.linkedin.com/in/katarina-levec-grajfoner-899799257",
-		"asset": "/assets/team/Katarina.jpg"
-	},
-	{
-		"name": "Urška Torkar",
-		"job": "Ekipa za program",
-		"linkedIn": "",
-		"asset": "/assets/team/Urška.jpg"
-	},
-	{
-		"name": "Maja Deutsch",
-		"job": "Logistika",
-		"linkedIn": "https://www.linkedin.com/in/maja-deutsch-1b3380373/",
-		"asset": "/assets/team/Maja.jpg"
-	},
-	{
-		"name": "Iva Klofutar",
-		"job": "Oblikovanje & PR",
-		"linkedIn": "https://www.linkedin.com/in/iva-klofutar-78a387373/",
-		"asset": "/assets/team/Iva.jpg"
+		"asset": "/assets/team/Marcel.png"
 	},
 	{
 		"name": "Klara Razboršek",
 		"job": "Koordinatorka FR",
 		"linkedIn": "https://www.linkedin.com/in/klara-razbor%C5%A1ek-536341269/",
-		"asset": "/assets/team/Klara.jpg"
+		"asset": "/assets/team/Klara.png"
+	},
+	{
+		"name": "Tinkara Korošec",
+		"job": "Program & PR",
+		"linkedIn": "https://www.linkedin.com/in/tinkara-koro%C5%A1ec-035a71261/",
+		"asset": "/assets/team/Tinkara.png"
+	},
+	{
+		"name": "Blaž Bandur",
+		"job": "Stiki z udeleženci",
+		"linkedIn": "https://www.linkedin.com/in/bla%C5%BE-bandur-157b62302",
+		"asset": "/assets/team/Blaž.png"
+	},
+	{
+		"name": "Maja Deutsch",
+		"job": "Logistika",
+		"linkedIn": "https://www.linkedin.com/in/maja-deutsch-1b3380373/",
+		"asset": "/assets/team/Maja.png"
+	},
+	{
+		"name": "Iva Klofutar",
+		"job": "Oblikovanje & PR",
+		"linkedIn": "https://www.linkedin.com/in/iva-klofutar-78a387373/",
+		"asset": "/assets/team/Iva.png"
 	},
 	{
 		"name": "Jan Kogovšek",
 		"job": "Ekipa za FR",
 		"linkedIn": "https://www.linkedin.com/in/jankogovsek/",
-		"asset": "/assets/team/Jan.jpg"
+		"asset": "/assets/team/Jan.png"
 	},
 	{
 		"name": "Vanja Ivošević",
 		"job": "Ekipa za FR",
 		"linkedIn": "https://www.linkedin.com/in/vanja-ivo%C5%A1evi%C4%87-5723a224b/",
-		"asset": "/assets/team/Vanja.jpg"
+		"asset": "/assets/team/Vanja.png"
+	},
+	{
+		"name": "Urška Torkar",
+		"job": "Ekipa za program",
+		"linkedIn": "",
+		"asset": "/assets/team/Urška.png"
+	},
+	{
+		"name": "Katarina Levec",
+		"job": "Ekipa za program",
+		"linkedIn": "http://www.linkedin.com/in/katarina-levec-grajfoner-899799257",
+		"asset": "/assets/team/Katarina.png"
 	},
 	{
 		"name": "Žiga Trop",
 		"job": "IT",
 		"linkedIn": "https://www.linkedin.com/in/%C5%BEiga-trop-973314300/",
-		"asset": "/assets/team/Žiga.jpg"
+		"asset": "/assets/team/Žiga.png"
 	}
 ]

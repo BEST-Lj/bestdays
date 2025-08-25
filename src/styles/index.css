@@ -3,8 +3,24 @@ body {
 	flex-direction: column;
 }
 
-.program-navigation {
+.best-dnevi {
 	padding-top: 2rem;
+	margin: 1rem auto 0 auto;
+	width: 50%;
+	font-size: clamp(30px, 4vw, 80px);
+	text-align: center;
+}
+
+.best-dnevi-desc {
+	margin: 0 auto;
+	width: 70%;
+	font-size: clamp(10px, 2vw, 30px);
+	line-height: 1.2em;
+	text-align: center;
+	white-space: normal;
+}
+
+.program-navigation {
 	width: 60%;
 	justify-self: center;
 	justify-items: center;
@@ -25,6 +41,9 @@ body {
 	height: 100%;
 	opacity: 0.85;
 	overflow: hidden;
+	transform-origin: bottom;
+	transform: scale(1.75);
+	pointer-events: none;
 }
 
 .program-navigation svg defs {
@@ -183,11 +202,6 @@ body {
 		margin-left: 15px;
 	}
 
-	.program-navigation button {
-		width: 350px;
-		height: 350px;
-	}
-
 	.program-navigation {
 		grid-template-columns: auto;
 	}
@@ -199,10 +213,6 @@ body {
 		margin-left: 40px;
 	}
 
-	.program-navigation button {
-		width: 275px;
-		height: 275px;
-	}
 }
 
 @media (max-width: 350px) {

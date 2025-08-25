@@ -39,8 +39,26 @@ body {
 	top: -175px;
 }
 
+
+.elipses1,
+.elipses2 {
+	opacity: 0;
+	display: block;
+	height: 130vh;
+}
+
+.elipses1 {
+	transform: rotate(-70deg) translateX(5%) translateY(-20%) scale(1.5);
+}
+
+.elipses2 {
+	transform:
+		translateX(-20%) translateY(-65%) rotate(20deg) scale(1.5);
+}
+
 .background-content {
-	z-index: -100;
+	min-height: 100%;
+	z-index: -5;
 }
 
 .prev-article {
@@ -92,7 +110,7 @@ article {
 	padding: 0 2em;
 	border-top-left-radius: 25px;
 	border-bottom-left-radius: 25px;
-	top: 5%;
+	top: 7%;
 	right: 0px;
 	margin: auto 0;
 	background-color: var(--dark-blue);
@@ -150,13 +168,33 @@ article {
 }
 
 @media (max-width: 800px) {
+	body {
+		position: relative;
+	}
+
+	.background-content .elipses1,
+	.background-content .elipses2 {
+		opacity: 1;
+	}
+
 	.main-div {
-		width: 95%;
-		margin: 0;
+		width: 90%;
+		display: block;
+		padding: 0;
+		padding-top: 2rem;
 	}
 
 	.articles {
-		height: 450px;
+		display: block;
+		height: auto;
+	}
+
+	article {
+		position: static;
+		opacity: 1;
+		padding-top: 2rem;
+		margin-bottom: 5vh;
+		border-radius: 25px;
 	}
 
 	.date {
@@ -164,8 +202,9 @@ article {
 	}
 
 	.date-div {
-		top: 5%;
 		height: 40px;
+		top: 0px;
+		border-radius: 0 15px 0 15px;
 	}
 
 	.article-buttons button {
@@ -174,30 +213,18 @@ article {
 
 	.prev-article svg,
 	.next-article svg {
-		width: 50%;
-		height: 50%;
+		display: none;
 	}
 }
 
 @media (max-width: 600px) {
-	.main-div {
-		width: 98%;
-	}
-
-	.article-buttons {
-		align-self: center;
-	}
-
-	.main-div {
-		grid-template-columns: 30px 1fr 30px;
-	}
-
 	.body {
+		margin-top: 0;
 		margin-bottom: 8px;
 	}
 
-	article {
-		margin: 0;
+	.article-buttons {
+		margin: 1.5rem 0;
 	}
 
 	p {
@@ -215,12 +242,31 @@ article {
 	}
 }
 
+@media (max-width: 450px) {
+	.article-buttons {
+		margin: 1rem 0;
+		align-self: center;
+	}
+
+
+	.date-div {
+		padding: 0 1em;
+		height: 35px;
+	}
+}
+
+/* 
+
 @media (max-width: 500px) {
+
+	.article-buttons {
+	}
 	.articles {
 		height: 500px;
 	}
 
 	.article-buttons {
+align-self: center;
 		min-width: unset;
 	}
 
@@ -264,4 +310,4 @@ article {
 		min-width: unset;
 		flex: 1;
 	}
-}
+} */
