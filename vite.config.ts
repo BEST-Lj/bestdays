@@ -11,6 +11,8 @@ export default defineConfig({
 				partners: resolve(__dirname, 'pages/partners.html'),
 				program: resolve(__dirname, 'pages/program.html'),
 				publications: resolve(__dirname, 'pages/publications.html'),
+				interaktivnedelavnice: resolve(__dirname, 'pages/interaktivnedelavnice.html'),
+				casestudy: resolve(__dirname, 'pages/casestudy.html'),
 			},
 		},
 	},

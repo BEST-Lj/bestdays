@@ -85,7 +85,7 @@ for (let i = 0; i < articleJson.length; i++) {
 		readMore.innerText = "PREBERI VEČ";
 
 		readMore.addEventListener("click", (_) => {
-			const redirect = article.className.replaceAll(" ", "-");
+			const redirect = article.className.replaceAll(" ", "");
 			document.location.href = `/pages/${redirect}.html`
 		});
 
