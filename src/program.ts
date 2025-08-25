@@ -85,10 +85,7 @@ for (let i = 0; i < articleJson.length; i++) {
 		readMore.innerText = "PREBERI VEČ";
 
 		readMore.addEventListener("click", (_) => {
-			/* SHOULDNT BE NEEDED, BUT THE ${json[i].type} didnt' work idk anymore fuck this
-			 *  */
-			const currArticle = document.querySelector("article[index='0']") as HTMLDivElement;
-			const redirect = currArticle.className.replaceAll(" ", "-");
+			const redirect = article.className.replaceAll(" ", "-");
 			document.location.href = `/pages/${redirect}.html`
 		});
 
@@ -103,8 +100,10 @@ for (let i = 0; i < articleJson.length; i++) {
 	article.append(dateDiv, type, title, p, buttonsDiv);
 	articlesDiv.appendChild(article);
 
-	if (article.getAttribute("index") == "0")
+	if (article.getAttribute("index") == "0") {
 		article.style.opacity = "1.0";
+		article.style.pointerEvents = "auto";
+	}
 }
 
 window.addEventListener("DOMContentLoaded", () => {

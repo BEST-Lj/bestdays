@@ -76,22 +76,6 @@ body {
 	text-align: left;
 }
 
-/* .chem-icon {
-	position: absolute;
-
-	left: 65vw;
-	top: -35vh;
-
-	transform: rotate(15deg);
-	transition: top 0.8s cubic-bezier(0.25, 0.25, 0.75, 1),
-		left 0.8s cubic-bezier(0.25, 0.25, 0.75, 1);
-
-	height: 125%;
-	filter: contrast(140%) brightness(60%);
-
-} */
-
-
 .schedule-div button {
 	padding: 0;
 }
@@ -207,17 +191,17 @@ body {
 	}
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
 	.poster {
-		width: 300px;
-		margin-left: 40px;
+		width: 350px;
+		margin-left: 20px;
 	}
-
 }
 
-@media (max-width: 350px) {
+@media (max-width: 375px) {
 	.poster {
 		width: 275px;
-		margin-left: 25px;
+		height: ;
+		margin-left: 35px;
 	}
 }

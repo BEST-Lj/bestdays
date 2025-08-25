@@ -37,14 +37,11 @@
 }
 
 .content {
-	padding-bottom: 1rem;
+	padding-top: 1rem;
 }
 
 .content p {
 	text-align: justify;
-}
-
-.content p {
 	font-size: clamp(10px, 4vw, 25px);
 	margin-right: 4rem;
 }
@@ -82,6 +79,7 @@
 .enroll {
 	margin: 0 5rem 0 auto;
 	background-color: rgba(0, 0, 85, 0.49);
+	font-size: clamp(14px, 2vw, 20px);
 	width: 150px;
 	padding: 0.5rem;
 	border-radius: 20px;
@@ -94,6 +92,10 @@
 		width: 90%;
 		padding: 0;
 		margin: 3rem auto;
+	}
+
+	.content p {
+		margin-right: 1rem;
 	}
 
 	.date {
@@ -126,8 +128,17 @@
 		margin: 1.5rem 0;
 	}
 
+	.enroll {
+		margin: 0 auto;
+	}
+
 	.article {
 		border-radius: 15px;
+		padding: 1.5rem;
+	}
+
+	.article p {
+		margin-right: 0;
 	}
 
 	p {
@@ -146,11 +157,9 @@
 }
 
 @media (max-width: 450px) {
-	.article-buttons {
-		margin: 1rem 0;
-		align-self: center;
+	.enroll {
+		width: 100px;
 	}
-
 
 	.date-div {
 		padding: 0 1em;
