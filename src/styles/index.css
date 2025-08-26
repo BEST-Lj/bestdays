@@ -3,6 +3,14 @@ body {
 	flex-direction: column;
 }
 
+.delavnice {
+	margin-left: 3px
+}
+
+.case-study {
+	margin-right: 1px
+}
+
 .best-dnevi {
 	padding-top: 2rem;
 	margin: 1rem auto 0 auto;
