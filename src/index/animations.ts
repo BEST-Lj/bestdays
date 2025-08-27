@@ -1,12 +1,12 @@
 import { createTimeline, type DefaultsParams, type Timeline } from "animejs";
 
 const baseConfig: DefaultsParams = {
-	duration: 800,
+	duration: 400,
 	ease: "linear",
 	autoplay: false,
 };
 
-export function notebook(pattern: SVGPatternElement, gElement: SVGGElement): Timeline {
+export function notebook(pattern: SVGPatternElement, gElement: SVGGElement, folderGElem: SVGGElement | null): Timeline {
 	const timeline = createTimeline({ defaults: baseConfig });
 
 	timeline.add(gElement, {
@@ -15,29 +15,40 @@ export function notebook(pattern: SVGPatternElement, gElement: SVGGElement): Tim
 	timeline.add(pattern, {
 		rotate: [0, -4, -8, -12,],
 	}, 0);
+	if (folderGElem != null) {
+		timeline.add(folderGElem, {
+			translateY: [204, 208, 212, 216]
+		}, 0)
+	}
 
 	timeline.pause();
 
 	return timeline;
 }
 
-export function pen(pattern: SVGPatternElement, gElement: SVGGElement): Timeline {
+export function pen(pattern: SVGPatternElement, gElement: SVGGElement, folderGElem: SVGGElement | null): Timeline {
 	const timeline = createTimeline({ defaults: baseConfig });
+	pattern.style.transformOrigin = "center";
 
 	timeline.add(gElement, {
-		translateX: [0, 2, 4, 6],
-		translateY: [0, -5, -7, -9]
+		translateX: [0, 5, 10, 15],
+		translateY: [0, -20, -40, -60]
 	});
 	timeline.add(pattern, {
-		rotate: [0, -5, -10, -14],
+		rotate: [0, -5, -10, -18],
 	}, 0);
+	if (folderGElem != null) {
+		timeline.add(folderGElem, {
+			translateY: [204, 208, 212, 216]
+		}, 0)
+	}
 
 	timeline.pause();
 
 	return timeline;
 }
 
-export function calculator(pattern: SVGPatternElement, gElement: SVGGElement): Timeline {
+export function calculator(pattern: SVGPatternElement, gElement: SVGGElement, folderGElem: SVGGElement | null): Timeline {
 	const timeline = createTimeline({ defaults: baseConfig });
 
 	timeline.add(gElement, {
@@ -46,13 +57,18 @@ export function calculator(pattern: SVGPatternElement, gElement: SVGGElement): T
 	timeline.add(pattern, {
 		rotate: [0, -5, -10, -15],
 	}, 0);
+	if (folderGElem != null) {
+		timeline.add(folderGElem, {
+			translateY: [204, 208, 212, 216]
+		}, 0)
+	}
 
 	timeline.pause();
 
 	return timeline;
 }
 
-export function keyboard(pattern: SVGPatternElement, gElement: SVGGElement): Timeline {
+export function keyboard(pattern: SVGPatternElement, gElement: SVGGElement, folderGElem: SVGGElement | null): Timeline {
 	const timeline = createTimeline({ defaults: baseConfig });
 
 	timeline.add(gElement, {
@@ -62,13 +78,18 @@ export function keyboard(pattern: SVGPatternElement, gElement: SVGGElement): Tim
 	timeline.add(pattern, {
 		rotate: [0, -1, -2, -4],
 	}, 0);
+	if (folderGElem != null) {
+		timeline.add(folderGElem, {
+			translateY: [204, 208, 212, 216]
+		}, 0)
+	}
 
 	timeline.pause();
 
 	return timeline;
 }
 
-export function mouse(pattern: SVGPatternElement, gElement: SVGGElement): Timeline {
+export function mouse(pattern: SVGPatternElement, gElement: SVGGElement, folderGElem: SVGGElement | null): Timeline {
 	const timeline = createTimeline({ defaults: baseConfig });
 
 	pattern.style.transformOrigin = "center left";
@@ -80,6 +101,11 @@ export function mouse(pattern: SVGPatternElement, gElement: SVGGElement): Timeli
 	timeline.add(pattern, {
 		rotate: [0, 7, 14, 22],
 	}, 0);
+	if (folderGElem != null) {
+		timeline.add(folderGElem, {
+			translateY: [204, 208, 212, 216]
+		}, 0)
+	}
 
 	timeline.pause();
 

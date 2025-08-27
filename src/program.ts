@@ -10,6 +10,9 @@ let bgAnimationIndex = 0;
 const prevArticle = document.querySelector(".prev-article") as HTMLButtonElement;
 const nextArticle = document.querySelector(".next-article") as HTMLButtonElement;
 
+const scrollingElement = document.scrollingElement || document.documentElement;
+const navbarRect = document.querySelector(".navbar")!.getBoundingClientRect();
+
 function switchBG(next: boolean) {
 	const articlesLen = articlesDiv.children.length;
 	if (next)
@@ -53,7 +56,7 @@ nextArticle.addEventListener("click", (_) => switchArticle(true));
 for (let i = 0; i < articleJson.length; i++) {
 	const article = document.createElement("article") as HTMLDivElement;
 	article.setAttribute("index", `${i}`);
-	article.className = `${articleJson[i].title.toLowerCase()}`
+	article.className = `${articleJson[i].title.toLowerCase()}`.replace(" ", "-");
 
 	const dateDiv = document.createElement("div") as HTMLDivElement;
 	dateDiv.className = "date-div";
@@ -85,7 +88,7 @@ for (let i = 0; i < articleJson.length; i++) {
 		readMore.innerText = "PREBERI VEČ";
 
 		readMore.addEventListener("click", (_) => {
-			const redirect = article.className.replaceAll(" ", "");
+			const redirect = article.className.replaceAll("-", "");
 			document.location.href = `/pages/${redirect}.html`
 		});
 
@@ -106,14 +109,38 @@ for (let i = 0; i < articleJson.length; i++) {
 	}
 }
 
+function scrollToArticle(article: HTMLElement) {
+	const rect = article.getBoundingClientRect();
+	const absoluteTop = rect.top + window.scrollY;
+
+	const scrollPos = absoluteTop - navbarRect.height - (1 / 10 * window.innerHeight);
+
+	const maxScroll = scrollingElement.scrollHeight - window.innerHeight;
+	const clampedScrollPos = Math.min(Math.max(scrollPos, 0), maxScroll);
+
+	animate(scrollingElement, {
+		scrollTop: clampedScrollPos,
+		duration: 300,
+		ease: "inOutSine"
+	});
+}
+
 window.addEventListener("DOMContentLoaded", () => {
 	const params = new URLSearchParams(window.location.search);
-	const activeInd = params.get("active-article");
+	const articleClass = params.get("active-article");
 
-	if (activeInd == "1") {
-		switchArticle(true);
+	if (articleClass == "delavnice" || articleClass == null) return;
+
+	const isMobile = window.innerWidth <= 800;
+	if (isMobile) {
+		console.log(articleClass);
+		const article = document.querySelector(`.${articleClass}`) as HTMLDivElement;
+		console.log(article);
+		scrollToArticle(article);
+
+		return;
 	}
-	else if (activeInd == "2") {
-		switchArticle(false);
+	else {
+		switchArticle(articleClass == "case-study");
 	}
 });

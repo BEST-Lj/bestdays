@@ -10,14 +10,14 @@ const animations: Record<string, Function> = {
 	mouse
 };
 
-function createAnimation(btn: HTMLButtonElement, pattern: SVGPatternElement, gElem: SVGGElement) {
+function createAnimation(btn: HTMLButtonElement, pattern: SVGPatternElement, gElem: SVGGElement, folder: SVGGElement | null) {
 	const patternItem = gElem.id.replace("-g-elem", "").split("-").pop();
 	if (!patternItem) return;
 
 	const timelineFunc = animations[patternItem];
 	if (!timelineFunc) return;
 
-	const a = timelineFunc(pattern, gElem) as Timeline;
+	const a = timelineFunc(pattern, gElem, folder) as Timeline;
 
 
 	btn.addEventListener("mouseenter", () => {
@@ -40,7 +40,7 @@ for (let i = 0; i < navigationButtons.length; i++) {
 	let svgElem: SVGSVGElement | null;
 
 	btn.addEventListener("click", () => {
-		document.location.href = `/pages/program.html?active-article=${i}`
+		document.location.href = `/pages/program.html?active-article=${btn.className}`
 	});
 
 	fetch(`/assets/index/${btn.className}.svg`)
@@ -54,9 +54,12 @@ for (let i = 0; i < navigationButtons.length; i++) {
 			}
 		}).then(() => {
 			const patternElems = svgElem!.querySelectorAll("pattern") as NodeListOf<SVGPatternElement>;
-			for (const pattern of patternElems) {
+			const folderGElem = svgElem!.querySelector(`#${btn.className}-folder`) as SVGGElement;
+
+			for (let i = 0; i < patternElems.length; i++) {
+				const pattern = patternElems[i];
 				const gElem = svgElem!.querySelector(`#${pattern.id}-g-elem`) as SVGGElement;
-				createAnimation(btn, pattern, gElem);
+				createAnimation(btn, pattern, gElem, i == 0 ? folderGElem : null);
 			}
 		});
 }

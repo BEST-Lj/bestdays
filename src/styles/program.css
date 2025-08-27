@@ -196,6 +196,7 @@ article {
 		padding-top: 2rem;
 		margin-bottom: 5vh;
 		border-radius: 25px;
+		pointer-events: all
 	}
 
 	.date {
@@ -255,60 +256,3 @@ article {
 		height: 35px;
 	}
 }
-
-/* 
-
-@media (max-width: 500px) {
-
-	.article-buttons {
-	}
-	.articles {
-		height: 500px;
-	}
-
-	.article-buttons {
-align-self: center;
-		min-width: unset;
-	}
-
-	article {
-		padding: 0 1rem;
-	}
-
-	.body {
-		margin: 0 auto;
-	}
-
-	.title {
-		margin: 0;
-	}
-
-	.date {
-		font-size: calc(0.7rem);
-	}
-
-	.date-div {
-		padding: 0 15px;
-	}
-}
-
-@media (max-width: 365px) {
-	.article-buttons {
-		justify-content: center;
-		gap: 0.5rem;
-		margin-bottom: 1.25rem;
-	}
-
-	.date-div {
-		padding: 0 5px;
-	}
-
-	.body {
-		margin-top: 0.35em;
-	}
-
-	.article-buttons button {
-		min-width: unset;
-		flex: 1;
-	}
-} */

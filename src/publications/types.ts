@@ -1,4 +1,5 @@
 import type { PDFDocumentLoadingTask, PDFDocumentProxy, RenderTask } from 'pdfjs-dist';
+import type { RenderParameters } from 'pdfjs-dist/types/src/display/api';
 
 export interface PDFTouchProps {
 	isTouch: boolean,
@@ -23,6 +24,7 @@ export interface PDFRenderProps {
 	renderTask: RenderTask | null,
 	pdfLeftEdgeX: number | null,
 	topEdge: number,
+	renderParams: RenderParameters
 }
 
 export interface PDFProps {
@@ -39,4 +41,10 @@ export interface PDFNavigationProps {
 	prevBtn: HTMLButtonElement,
 	nextBtn: HTMLButtonElement,
 	pageInfo: HTMLSpanElement,
+}
+
+export interface RenderHTMLElements {
+	pdfView: HTMLIFrameElement,
+	pdfWrapper: HTMLDivElement,
+	pdfContainer: HTMLDivElement,
 }

@@ -103,6 +103,10 @@
 	box-shadow: none;
 }
 
+#pdf-wrapper {
+	will-change: transform;
+}
+
 .publication,
 .proceeding {
 	position: relative;

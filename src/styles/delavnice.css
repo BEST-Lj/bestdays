@@ -1,7 +1,5 @@
 body {
-	position: relative;
 	z-index: -1;
-	background: none;
 }
 
 .main-div {
@@ -45,6 +43,32 @@ body {
 	padding: 1rem 0;
 }
 
+.back-button-div {
+	position: absolute;
+	min-height: 100%;
+	min-width: 100%;
+	mix-blend-mode: screen;
+	pointer-events: none;
+	z-index: 1;
+}
+
+.back-button {
+	pointer-events: all;
+	display: flex;
+	padding: 1rem;
+	border-radius: 20px;
+	backdrop-filter: blur(4px);
+	background-color: color-mix(in srgb, var(--main-blue), transparent 15%);
+	position: fixed;
+	left: 1em;
+	bottom: 2rem;
+}
+
+.back-button svg {
+	fill: white;
+}
+
+
 /*  translateX(25%) translateY(80%) scale(1.2); */
 
 /* .background-content circle[fill="none"] {
@@ -63,13 +87,6 @@ body {
 	transform-origin: top left;
 	transform: rotate(-60deg) scale(0.5);
 } */
-
-.background-content {
-	position: absolute;
-	min-height: 100%;
-	min-width: 100%;
-	background: linear-gradient(148deg, var(--dark-blue), var(--main-blue), var(--light-blue));
-}
 
 .header-title * {
 	font-size: clamp(10px, 2.5vw, 32px);
@@ -190,6 +207,11 @@ body {
 }
 
 @media (max-width: 450px) {
+	.back-button {
+		border-radius: 15px;
+		padding: 0.5rem;
+	}
+
 	.article-buttons {
 		margin: 1rem 0;
 		align-self: center;

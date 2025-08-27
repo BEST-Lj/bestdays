@@ -18,9 +18,9 @@ export const articleTransition = (duration: number, left: boolean, visible: bool
  * Showing and hiding the chem icon on the interaktivne delavnice
 */
 export const chemIcon1Animatable = createAnimatable(".chem-icon1", {
-	right: 1000,
-	top: 1000,
-	rotate: 1000,
+	right: 500,
+	top: 500,
+	rotate: 500,
 	ease: "linear"
 });
 
@@ -49,9 +49,9 @@ export const chemIcon1Transition = (index: number) => {
 
 
 export const chemIcon2Animatable = createAnimatable(".chem-icon2", {
-	left: 1000,
-	top: 1000,
-	rotate: 1000,
+	left: 500,
+	top: 500,
+	rotate: 500,
 	ease: "linear"
 });
 
@@ -80,8 +80,8 @@ export const chemIcon2Transition = (index: number) => {
 
 
 export const chipIcon1Animatable = createAnimatable(".chip-icon1", {
-	left: { duration: 1000, unit: "px" },
-	top: { duration: 1000, unit: "px" },
+	left: { duration: 500, unit: "px" },
+	top: { duration: 500, unit: "px" },
 	ease: "linear"
 });
 

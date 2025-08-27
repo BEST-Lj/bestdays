@@ -25,25 +25,6 @@ function moveScrollWithArticle(el: HTMLElement) {
 	});
 }
 
-/* function firstShownArticle(): HTMLElement | null {
-	let firstArticle: HTMLElement | null = null;
-
-	let lowestIndex = Infinity;
-
-	for (const [article, info] of articleMap.entries()) {
-		if (!info.shown) continue;
-
-		if (info.shownOrder! < lowestIndex) {
-			lowestIndex = info.shownOrder!;
-			firstArticle = article;
-		}
-
-		info.shownOrder!--;
-	}
-
-	return firstArticle!;
-} */
-
 function hideShowArticleSwitch(article: HTMLElement) {
 	const articleInfo = articleMap.get(article);
 

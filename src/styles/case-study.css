@@ -55,6 +55,29 @@
 	margin-bottom: 4rem;
 }
 
+.back-button-div {
+	position: absolute;
+	min-height: 100%;
+	min-width: 100%;
+	mix-blend-mode: screen;
+	z-index: 10;
+}
+
+.back-button {
+	display: flex;
+	padding: 1rem;
+	border-radius: 20px;
+	backdrop-filter: blur(4px);
+	background-color: color-mix(in srgb, var(--main-blue), transparent 35%);
+	position: fixed;
+	left: 1em;
+	bottom: 2rem;
+}
+
+.back-button svg {
+	fill: white;
+}
+
 .date-div {
 	position: absolute;
 	height: 50px;
