@@ -2,9 +2,6 @@ import type { DrawableSVGGeometry, JSAnimation } from "animejs";
 import type { PDFMouseProps, PDFNavigationProps, PDFProps, PDFRenderProps, PDFTouchProps, RenderHTMLElements } from "./types.ts";
 
 export class Globals {
-	static pdfCompleteTouchEnd(e: TouchEvent) {
-		throw new Error("Method not implemented.");
-	}
 	static pdfTouchProps = {
 		isTouch: false,
 		initialDistance: 0,
