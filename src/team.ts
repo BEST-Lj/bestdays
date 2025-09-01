@@ -1,8 +1,37 @@
-import teamData from "./json/team.json";
+import { createTimeline } from "animejs";
+import teamData25 from "./json/team.json";
+import teamData24 from "./json/team24.json";
 import "./toolbar.ts"
-const teamDiv = document.querySelector(".team-div") as HTMLDivElement;
+const teamDiv25 = document.querySelector("#bdz-2025") as HTMLDivElement;
+const teamDiv24 = document.querySelector("#bdz-2024") as HTMLDivElement;
+const toggleSlider = document.querySelector(".slider-background") as HTMLDivElement;
+const toggle24 = document.getElementById("2024") as HTMLInputElement;
+const toggle25 = document.getElementById("2025") as HTMLInputElement;
 
-for (const person of teamData) {
+const showHideTeam = createTimeline({
+	defaults: {
+		duration: 200,
+		ease: "linear",
+		autoplay: false,
+	},
+});
+
+showHideTeam.add(toggleSlider, { left: "50%" }, 0);
+showHideTeam.add(teamDiv25, { opacity: [1, 0] }, 0);
+showHideTeam.add(teamDiv24, { opacity: [0, 1] }, 0);
+showHideTeam.pause();
+
+toggle24.addEventListener("click", () => {
+	showHideTeam.play();
+});
+
+toggle25.addEventListener("click", () => {
+	showHideTeam.reverse();
+	showHideTeam.resume();
+});
+
+
+function addPersonToDiv(person: any, div: HTMLDivElement) {
 	const imgDiv = document.createElement('div') as HTMLDivElement;
 	const img = document.createElement('img') as HTMLImageElement;
 	const labelDiv = document.createElement('div') as HTMLDivElement;
@@ -19,7 +48,7 @@ for (const person of teamData) {
 
 	imgDiv.appendChild(img);
 	imgDiv.appendChild(labelDiv);
-	teamDiv.appendChild(imgDiv);
+	div.appendChild(imgDiv);
 
 	if (person.linkedIn) {
 		imgDiv.addEventListener('click', () => {
@@ -30,3 +59,11 @@ for (const person of teamData) {
 		imgDiv.classList.remove('has-link');
 	}
 }
+
+for (const person of teamData25) {
+	addPersonToDiv(person, teamDiv25)
+}
+
+teamData24.forEach((person) => {
+	addPersonToDiv(person, teamDiv24);
+})

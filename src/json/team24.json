@@ -1,0 +1,68 @@
+[
+	{
+		"name": "Zara Bunc",
+		"job": "Glavna organizatorka",
+		"linkedIn": "https://www.linkedin.com/in/zara-bunc-46602129b/",
+		"asset": "/assets/team/24/Zara.jpg"
+	},
+	{
+		"name": "Neža Bajec",
+		"job": "Program",
+		"linkedIn": "https://www.linkedin.com/in/ne%C5%BEa-bajec-207407275/",
+		"asset": "/assets/team/24/Neza.jpg"
+	},
+	{
+		"name": "Špela Blaznik",
+		"job": "Stiki s podjetji",
+		"linkedIn": "https://www.linkedin.com/in/%C5%A1pela-blaznik-925b94278/",
+		"asset": "/assets/team/24/Spela.jpg"
+	},
+	{
+		"name": "Lara Likar",
+		"job": "Stiki s udeleženci",
+		"linkedIn": "https://www.linkedin.com/in/lara-likar-ba2285304/",
+		"asset": "/assets/team/24/Lara.jpg"
+	},
+	{
+		"name": "Tinkara Korošec",
+		"job": "Ekipa za program",
+		"linkedIn": "https://www.linkedin.com/in/tinkara-koro%C5%A1ec-035a71261/",
+		"asset": "/assets/team/24/Tinkara.jpg"
+	},
+	{
+		"name": "Neja Brumec",
+		"job": "Ekipa za program",
+		"linkedIn": "https://www.linkedin.com/in/neja-brumec-8938b4287/",
+		"asset": "/assets/team/24/Neja.jpg"
+	},
+	{
+		"name": "Karin Kunstelj",
+		"job": "Ekipa za program",
+		"linkedIn": "https://www.linkedin.com/in/karin-kunstelj-4b005b2b5/",
+		"asset": "/assets/team/24/Karin.jpg"
+	},
+	{
+		"name": "Lucija Kovaček",
+		"job": "Ekipa za PR",
+		"linkedIn": "https://www.linkedin.com/in/lucija-kova%C4%8Dek-552975323/",
+		"asset": "/assets/team/24/Lucija.jpg"
+	},
+	{
+		"name": "Deni Krašna",
+		"job": "Ekipa za PR",
+		"linkedIn": "https://www.linkedin.com/in/deni-krasna-796b2a300/",
+		"asset": "/assets/team/24/Deni.jpg"
+	},
+	{
+		"name": "Manca Simončič",
+		"job": "Logistika",
+		"linkedIn": "https://www.linkedin.com/in/manca-simončič-b5b85a248/",
+		"asset": "/assets/team/24/Manca.jpg"
+	},
+	{
+		"name": "Nik Čadež",
+		"job": "IT",
+		"linkedIn": "https://www.linkedin.com/in/nik-%C4%8Dade%C5%BE-2068861b4/",
+		"asset": "/assets/team/24/Nik.jpg"
+	}
+]

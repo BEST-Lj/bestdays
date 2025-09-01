@@ -63,9 +63,29 @@
 		</a>
 	</div>
 
-	<div class="container-fluid my-5">
-		<div class="team-div"></div>
+	<fieldset class="team-year-toggle">
+		<div class="toggle-container">
+			<div class="slider-background"></div>
+			<div class="selected-year-div">
+				<input type="radio" class="selected-year-input" id="2025" name="team" checked hidden />
+				<label for="2025" class="year-label">
+					<h2>2025</h2>
+				</label>
+			</div>
+			<div class="selected-year-div">
+				<input type="radio" class="selected-year-input" id="2024" name="team" hidden />
+				<label for="2024" class="year-label">
+					<h2>2024</h2>
+				</label>
+			</div>
+		</div>
+	</fieldset>
 
+	<div class="container-fluid my-5">
+		<div class="bdz-team-container">
+			<div id="bdz-2025" class="team-div"></div>
+			<div id="bdz-2024" class="team-div" style="opacity: 0;"></div>
+		</div>
 		<div class="join-best">
 			<p>BEST LJUBLJANA</p>
 			<h3><b>Začni svoja najboljša študentska leta v društvu BEST Ljubljana</b></h3>
