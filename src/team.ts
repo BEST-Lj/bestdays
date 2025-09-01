@@ -22,10 +22,14 @@ showHideTeam.add(teamDiv24, { opacity: [0, 1] }, 0);
 showHideTeam.pause();
 
 toggle24.addEventListener("click", () => {
+	teamDiv25.style.pointerEvents = "none";
+	teamDiv24.style.pointerEvents = "all";
 	showHideTeam.play();
 });
 
 toggle25.addEventListener("click", () => {
+	teamDiv24.style.pointerEvents = "none";
+	teamDiv25.style.pointerEvents = "all";
 	showHideTeam.reverse();
 	showHideTeam.resume();
 });
