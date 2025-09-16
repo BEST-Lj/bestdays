@@ -52,7 +52,7 @@ export function calculator(pattern: SVGPatternElement, gElement: SVGGElement, fo
 	const timeline = createTimeline({ defaults: baseConfig });
 
 	timeline.add(gElement, {
-		translateX: [0, -6, -12, -18],
+		translateX: [0, -14, -27, -40],
 	});
 	timeline.add(pattern, {
 		rotate: [0, -5, -10, -15],

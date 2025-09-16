@@ -95,3 +95,9 @@
 	}
 
 }
+
+@media (max-width: 380px) {
+	.close-modal .bi-x-lg {
+		transform: translate(10px, -20px);
+	}
+}
