@@ -66,27 +66,14 @@ body {
 
 .back-button svg {
 	fill: white;
+	transition: fill 0.3s ease;
 }
 
-
-/*  translateX(25%) translateY(80%) scale(1.2); */
-
-/* .background-content circle[fill="none"] {
-	fill: var(--main-blue);
+.back-button:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(4px);
+	transform: scale(1.05);
 }
-
-.svg-wrapper {
-	margin-top: 35%;
-	transform-origin: top left;
-	transform: translateX(35%) translateY(200px);
-	mix-blend-mode: color-dodge;
-	height: 100%;
-}
-
-.ellipses {
-	transform-origin: top left;
-	transform: rotate(-60deg) scale(0.5);
-} */
 
 .header-title * {
 	font-size: clamp(10px, 2.5vw, 32px);
