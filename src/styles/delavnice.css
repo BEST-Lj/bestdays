@@ -35,6 +35,25 @@ body {
 	transition: border-radius 0.3s ease;
 }
 
+.date-div {
+	position: absolute;
+	height: 40px;
+	padding: 0 2em;
+	border-radius: 0 15px 0 15px;
+	right: 0px;
+	margin: auto 0;
+	background-color: color-mix(in srgb, var(--dark-blue), transparent 35%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.date {
+	font-size: calc(1rem + .6vw);
+	font-weight: 700;
+	margin: 0;
+}
+
 .header {
 	cursor: pointer;
 	display: flex;
@@ -149,9 +168,8 @@ body {
 	}
 
 	.date-div {
-		height: 40px;
-		top: 0px;
-		border-radius: 0 15px 0 15px;
+		height: 30px;
+		padding: 0 1.5em;
 	}
 
 	.article-buttons button {
@@ -182,14 +200,12 @@ body {
 		margin-bottom: 5px;
 	}
 
-	.date {
-		font-size: calc(0.7rem + .4vw);
-
+	.content * {
+		font-size: clamp(6px, 2vw, 10px) !important;
 	}
 
-	.date-div {
-		top: 0px;
-		border-radius: 0 15px 0 15px;
+	.date {
+		font-size: calc(0.7rem + .4vw);
 	}
 }
 
@@ -207,6 +223,6 @@ body {
 
 	.date-div {
 		padding: 0 1em;
-		height: 35px;
+		height: 25px;
 	}
 }
