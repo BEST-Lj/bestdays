@@ -13,16 +13,11 @@ const scrollingElement = document.scrollingElement || document.documentElement;
 let shownArticles = 0;
 
 function moveScrollWithArticle(el: HTMLElement) {
-	const rect = el.getBoundingClientRect();
-	const absoluteTop = rect.top + window.scrollY;
+	const articleTop = el.offsetTop;
+	const scrollPos =
+		articleTop - navbarRect.height - Math.round(window.innerHeight * 0.1);
 
-	const scrollPos = absoluteTop - navbarRect.height - (1 / 10 * window.innerHeight);
-
-	animate(scrollingElement, {
-		scrollTop: scrollPos,
-		duration: 300,
-		ease: "inOutSine"
-	});
+	animate(scrollingElement, { scrollTop: scrollPos, duration: 300, ease: "inOutSine" });
 }
 
 function hideShowArticleSwitch(article: HTMLElement) {
