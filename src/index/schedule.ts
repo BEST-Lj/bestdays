@@ -82,8 +82,6 @@ prevBtns.forEach((btn) => btn.addEventListener("click", async () => {
 	resetInterval();
 }));
 
-
-
 function resetInterval() {
 	clearInterval(intervalId);
 	intervalId = setInterval(setVisiblePoster, 15000);

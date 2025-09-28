@@ -28,6 +28,10 @@ function createAnimation(btn: HTMLButtonElement, pattern: SVGPatternElement, gEl
 		a.reverse();
 		a.resume();
 	});
+
+	document.addEventListener("DOMContentLoaded", () => {
+		a.restart();
+	});
 }
 
 for (let i = 0; i < navigationButtons.length; i++) {

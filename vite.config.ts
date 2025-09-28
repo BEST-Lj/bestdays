@@ -13,6 +13,7 @@ export default defineConfig({
 				publications: resolve(__dirname, 'pages/publications.html'),
 				interaktivnedelavnice: resolve(__dirname, 'pages/interaktivnedelavnice.html'),
 				casestudy: resolve(__dirname, 'pages/casestudy.html'),
+				hekaton: resolve(__dirname, 'pages/hekaton.html'),
 			},
 		},
 	},
