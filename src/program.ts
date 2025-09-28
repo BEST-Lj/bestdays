@@ -81,22 +81,26 @@ for (let i = 0; i < articleJson.length; i++) {
 	const buttonsDiv = document.createElement("div") as HTMLDivElement;
 	buttonsDiv.className = "article-buttons";
 
-	if (article.getAttribute("index") != "1") {
-		const readMore = document.createElement("button") as HTMLButtonElement;
-		readMore.type = "button";
-		readMore.className = "read-more";
-		readMore.innerText = "PREBERI VEČ";
+	const readMore = document.createElement("button") as HTMLButtonElement;
+	readMore.type = "button";
+	readMore.className = "read-more";
+	readMore.innerText = "PREBERI VEČ";
 
-		readMore.addEventListener("click", (_) => {
-			const redirect = article.className.replaceAll("-", "");
-			document.location.href = `/pages/${redirect}.html`
-		});
+	readMore.addEventListener("click", (_) => {
+		const redirect = articleJson[i].redirect;
+		document.location.href = `/pages/${redirect}.html`
+	});
 
-		const enroll = document.createElement("button") as HTMLButtonElement;
-		enroll.type = "button";
-		enroll.className = "enroll";
-		enroll.innerText = "PRIJAVI SE";
+	const enroll = document.createElement("button") as HTMLButtonElement;
+	enroll.type = "button";
+	enroll.className = "enroll";
+	enroll.innerText = "PRIJAVI SE";
+	enroll.addEventListener("click", () => { window.open(articleJson[i].submit) });
 
+	if (i == 0) {
+		buttonsDiv.append(readMore);
+	}
+	else {
 		buttonsDiv.append(enroll, readMore);
 	}
 
@@ -133,9 +137,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 	const isMobile = window.innerWidth <= 800;
 	if (isMobile) {
-		console.log(articleClass);
 		const article = document.querySelector(`.${articleClass}`) as HTMLDivElement;
-		console.log(article);
 		scrollToArticle(article);
 
 		return;

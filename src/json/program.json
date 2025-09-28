@@ -2,9 +2,10 @@
   {
 	"type": "DELAVNICE",
     "title": "Interaktivne delavnice",
-    "body": "<p>Kratke interaktivne delavnice študentom omogočajo, da znotraj 2 ur pridobijo praktično-uporabne izkušnje in znanja, za kar se jim podeli certifikat. Število mest je omejeno.</p><p>Letos jih prirejamo v sodelovanju s Krko, Novartisom, Pipistrelom in Tehnološkim parkom.</p>",
+    "body": "<p>Kratke interaktivne delavnice študentom omogočajo, da znotraj 2 ur pridobijo praktično-uporabne izkušnje in znanja, za kar se jim podeli certifikat. Število mest je omejeno.</p> <p>Letos jih prirejamo v sodelovanju s <b>Petrolom, Novartisom, Pipistrelom, Lekom, Labtimom, LUI, IJS in Katapult ROBOTIKO</b>. Eno delavnico pa prirejamo mi!</p>",
+	"redirect": "interaktivnedelavnice",
     "date": "21 & 22 OKT",
-    "submit": "https://docs.google.com/forms/d/e/1FAIpQLSf1K1BFLBpkvdh8g7_oCD4eRCSedIv-a6--0SS_2_GXV9PN6w/viewform",
+	"submit": "",
 	"icons": {
 		"chem-icon": {
 			"right": "-400px",
@@ -18,10 +19,11 @@
   },
   {
 	"type": "HEKATON",
-    "title": "Hekaton",
-    "body": "<p>Kratke interaktivne delavnice študentom omogočajo, da znotraj 2 ur pridobijo praktično-uporabne izkušnje in znanja, za kar se jim podeli certifikat. Število mest je omejeno.</p><p>Letos jih prirejamo v sodelovanju s Krko, Novartisom, Pipistrelom in Tehnološkim parkom.</p>",
+    "title": "Hack the Future of Payments",
+    "body": "<p>Gre za tridnevni izziv, kjer študenti v ekipah rešujejo aktualne probleme iz prakse. Dogodek spodbuja uporabo znanja v praksi, timsko delo ter iskanje inovativnih rešitev. Najboljše ekipe pa za svoje ideje prejmejo tudi bogate nagrade!</p><p>Organiziramo jo v sodelovanju z <b>Bankartom</b>.</p>",
     "date": "21 & 23 OKT",
-    "submit": "https://docs.google.com/forms/d/e/1FAIpQLSf1K1BFLBpkvdh8g7_oCD4eRCSedIv-a6--0SS_2_GXV9PN6w/viewform",
+    "submit": "https://forms.gle/YHvjcgqN1R2goRgg6",
+	"redirect": "hekaton",
 	"icons": {
 		"chip": {
 			"top": "-35px",
@@ -33,9 +35,10 @@
   {
 	"type": "ŠTUDIJA PRIMERA",
     "title": "Case Study",
-    "body": "<p>Na študiji primera (“Case Study”) lahko študenti pokažejo svoje znanje, sposobnosti reševanja problemov in dela v skupini, za kar lahko osvojijo tudi denarne nagrade.</p><p>Organiziramo jo v sodelovanju z Krko.</p>",
+    "body": "<p>Na študiji primera (“Case Study”) lahko študenti pokažejo svoje znanje, sposobnosti reševanja problemov in dela v skupini, za kar lahko osvojijo tudi denarne nagrade!</p><p>Organiziramo jo v sodelovanju s <b>Krko</b>.</p>",
     "date": "23 OKT",
-    "submit": "https://docs.google.com/forms/d/e/1FAIpQLSf1K1BFLBpkvdh8g7_oCD4eRCSedIv-a6--0SS_2_GXV9PN6w/viewform",
+    "submit": "https://forms.gle/3GSCrpBD3qthHEfFA",
+	"redirect": "casestudy",
 	"icons": {
 		"chem-icon": {
 			"right": "-400px",
