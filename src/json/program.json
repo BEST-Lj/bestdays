@@ -2,7 +2,7 @@
   {
 	"type": "DELAVNICE",
     "title": "Interaktivne delavnice",
-    "body": "<p>Kratke interaktivne delavnice študentom omogočajo, da znotraj 2 ur pridobijo praktično-uporabne izkušnje in znanja, za kar se jim podeli certifikat. Število mest je omejeno.</p> <p>Letos jih prirejamo v sodelovanju s <b>Petrolom, Novartisom, Pipistrelom, Lekom, Labtimom, LUI, IJS in Katapult ROBOTIKO</b>. Eno delavnico pa prirejamo mi!</p>",
+    "body": "<p>Kratke interaktivne delavnice študentom omogočajo, da znotraj 2 ur pridobijo praktično-uporabne izkušnje in znanja, za kar se jim podeli certifikat. Število mest je omejeno.</p> <p>Letos jih prirejamo v sodelovanju s <b>Petrolom, Novartisom, Pipistrelom, Lekom, Labtimom, LUI, IJS in Katapult ROBOTIKA</b>. Eno delavnico pa prirejamo mi!</p>",
 	"redirect": "interaktivnedelavnice",
     "date": "21 & 22 OKT",
 	"submit": "",
@@ -21,7 +21,7 @@
 	"type": "HEKATON",
     "title": "Hack the Future of Payments",
     "body": "<p>Gre za tridnevni izziv, kjer študenti v ekipah rešujejo aktualne probleme iz prakse. Dogodek spodbuja uporabo znanja v praksi, timsko delo ter iskanje inovativnih rešitev. Najboljše ekipe pa za svoje ideje prejmejo tudi bogate nagrade!</p><p>Organiziramo jo v sodelovanju z <b>Bankartom</b>.</p>",
-    "date": "21 & 23 OKT",
+    "date": "21 – 23 OKT",
     "submit": "https://forms.gle/YHvjcgqN1R2goRgg6",
 	"redirect": "hekaton",
 	"icons": {

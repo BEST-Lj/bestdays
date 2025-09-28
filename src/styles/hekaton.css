@@ -78,6 +78,12 @@
 	fill: white;
 }
 
+.back-button:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(4px);
+	transform: scale(1.05);
+}
+
 .date-div {
 	position: absolute;
 	height: 50px;

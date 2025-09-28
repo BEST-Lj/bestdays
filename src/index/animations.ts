@@ -31,11 +31,11 @@ export function pen(pattern: SVGPatternElement, gElement: SVGGElement, folderGEl
 	pattern.style.transformOrigin = "center";
 
 	timeline.add(gElement, {
-		translateX: [0, 5, 10, 15],
+		translateX: [0, 20, 40, 60],
 		translateY: [0, -20, -40, -60]
 	});
 	timeline.add(pattern, {
-		rotate: [0, -5, -10, -18],
+		rotate: [0, -5, -10, -15],
 	}, 0);
 	if (folderGElem != null) {
 		timeline.add(folderGElem, {
@@ -52,10 +52,10 @@ export function calculator(pattern: SVGPatternElement, gElement: SVGGElement, fo
 	const timeline = createTimeline({ defaults: baseConfig });
 
 	timeline.add(gElement, {
-		translateX: [0, -14, -27, -40],
+		translateX: [0, 3, 6, 9],
 	});
 	timeline.add(pattern, {
-		rotate: [0, -5, -10, -15],
+		rotate: [0, -3, -6, -9],
 	}, 0);
 	if (folderGElem != null) {
 		timeline.add(folderGElem, {

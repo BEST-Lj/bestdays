@@ -42,8 +42,12 @@
 
 .content p {
 	text-align: justify;
-	font-size: clamp(10px, 4vw, 25px);
+	font-size: clamp(10px, 3vw, 20px);
 	margin-right: 4rem;
+}
+
+.content p:first-of-type {
+	padding-top: 1rem;
 }
 
 .arrow.shown {
@@ -76,6 +80,12 @@
 
 .back-button svg {
 	fill: white;
+}
+
+.back-button:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+	backdrop-filter: blur(4px);
+	transform: scale(1.05);
 }
 
 .date-div {
