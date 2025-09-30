@@ -60,9 +60,12 @@ for (let i = 0; i < navigationButtons.length; i++) {
 			const patternElems = svgElem!.querySelectorAll("pattern") as NodeListOf<SVGPatternElement>;
 			const folderGElem = svgElem!.querySelector(`#${btn.className}-folder`) as SVGGElement;
 
+			console.log(`${btn.className}-folder`);
+
 			for (let i = 0; i < patternElems.length; i++) {
 				const pattern = patternElems[i];
 				const gElem = svgElem!.querySelector(`#${pattern.id}-g-elem`) as SVGGElement;
+				console.log(folderGElem);
 				createAnimation(btn, pattern, gElem, i == 0 ? folderGElem : null);
 			}
 		});

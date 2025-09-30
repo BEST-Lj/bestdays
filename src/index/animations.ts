@@ -10,10 +10,10 @@ export function notebook(pattern: SVGPatternElement, gElement: SVGGElement, fold
 	const timeline = createTimeline({ defaults: baseConfig });
 
 	timeline.add(gElement, {
-		translateX: [0, -30, -60, -90],
+		translateX: [0, -30, -60, -80],
 	});
 	timeline.add(pattern, {
-		rotate: [0, -4, -8, -12,],
+		rotate: [0, -4, -8, -11],
 	}, 0);
 	if (folderGElem != null) {
 		timeline.add(folderGElem, {
