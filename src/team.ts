@@ -13,7 +13,7 @@ const joinBtn = document.querySelector("#join-btn") as HTMLButtonElement;
 
 
 joinBtn.addEventListener("click", () => {
-	window.open("https://www.bestljubljana.si/", '_blank');
+	window.open("https://docs.google.com/forms/d/e/1FAIpQLSfwvSfqM0WlfA4zWXTKv2_2HVroYr9hPaHIAUrl1V18Xw-heA/viewform", '_blank');
 });
 
 const showHideTeam = createTimeline({
