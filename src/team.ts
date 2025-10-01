@@ -10,6 +10,8 @@ const toggle25 = document.getElementById("2025") as HTMLInputElement;
 
 const joinBtn = document.querySelector("#join-btn") as HTMLButtonElement;
 
+
+
 joinBtn.addEventListener("click", () => {
 	window.open("https://www.bestljubljana.si/", '_blank');
 });
