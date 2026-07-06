@@ -1,7 +1,8 @@
 import { createTimeline } from "animejs";
-import teamData25 from "./json/team.json";
+import teamData25 from "./json/team25.json";
 import teamData24 from "./json/team24.json";
 import "./toolbar.ts"
+const teamDiv26 = document.querySelector("#bdz-2026") as HTMLDivElement;
 const teamDiv25 = document.querySelector("#bdz-2025") as HTMLDivElement;
 const teamDiv24 = document.querySelector("#bdz-2024") as HTMLDivElement;
 const toggleSlider = document.querySelector(".slider-background") as HTMLDivElement;
