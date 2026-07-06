@@ -1,4 +1,5 @@
 import { createTimeline } from "animejs";
+import teamData26 from "./json/team.json";
 import teamData25 from "./json/team25.json";
 import teamData24 from "./json/team24.json";
 import "./toolbar.ts"
@@ -8,6 +9,7 @@ const teamDiv24 = document.querySelector("#bdz-2024") as HTMLDivElement;
 const toggleSlider = document.querySelector(".slider-background") as HTMLDivElement;
 const toggle24 = document.getElementById("2024") as HTMLInputElement;
 const toggle25 = document.getElementById("2025") as HTMLInputElement;
+const toggle26 = document.getElementById("2026") as HTMLInputElement;
 
 const joinBtn = document.querySelector("#join-btn") as HTMLButtonElement;
 
@@ -25,23 +27,28 @@ const showHideTeam = createTimeline({
 	},
 });
 
-showHideTeam.add(toggleSlider, { left: "50%" }, 0);
-showHideTeam.add(teamDiv25, { opacity: [1, 0] }, 0);
-showHideTeam.add(teamDiv24, { opacity: [0, 1] }, 0);
-showHideTeam.pause();
+function showTeam(active: "2024" | "2025" | "2026") {
+	const sliderLeft =
+		active === "2026" ? "4px" :
+		active === "2025" ? "calc(33.333% + 4px)" :
+		"calc(66.666% + 4px)";
 
-toggle24.addEventListener("click", () => {
-	teamDiv25.style.pointerEvents = "none";
-	teamDiv24.style.pointerEvents = "all";
-	showHideTeam.play();
-});
+	createTimeline({
+		defaults: { duration: 200, ease: "linear" },
+	})
+		.add(toggleSlider, { left: sliderLeft }, 0)
+		.add(teamDiv24, { opacity: active === "2024" ? 1 : 0 }, 0)
+		.add(teamDiv25, { opacity: active === "2025" ? 1 : 0 }, 0)
+		.add(teamDiv26, { opacity: active === "2026" ? 1 : 0 }, 0);
 
-toggle25.addEventListener("click", () => {
-	teamDiv24.style.pointerEvents = "none";
-	teamDiv25.style.pointerEvents = "all";
-	showHideTeam.reverse();
-	showHideTeam.resume();
-});
+	teamDiv24.style.pointerEvents = active === "2024" ? "all" : "none";
+	teamDiv25.style.pointerEvents = active === "2025" ? "all" : "none";
+	teamDiv26.style.pointerEvents = active === "2026" ? "all" : "none";
+}
+
+toggle24.addEventListener("click", () => showTeam("2024"));
+toggle25.addEventListener("click", () => showTeam("2025"));
+toggle26.addEventListener("click", () => showTeam("2026"));
 
 
 function addPersonToDiv(person: any, div: HTMLDivElement) {
@@ -71,6 +78,10 @@ function addPersonToDiv(person: any, div: HTMLDivElement) {
 	} else {
 		imgDiv.classList.remove('has-link');
 	}
+}
+
+for (const person of teamData26) {
+	addPersonToDiv(person, teamDiv26)
 }
 
 for (const person of teamData25) {
