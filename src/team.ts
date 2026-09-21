@@ -19,13 +19,6 @@ joinBtn.addEventListener("click", () => {
 	window.open("https://docs.google.com/forms/d/e/1FAIpQLSfwvSfqM0WlfA4zWXTKv2_2HVroYr9hPaHIAUrl1V18Xw-heA/viewform", '_blank');
 });
 
-const showHideTeam = createTimeline({
-	defaults: {
-		duration: 200,
-		ease: "linear",
-		autoplay: false,
-	},
-});
 
 function showTeam(active: "2024" | "2025" | "2026") {
 	const sliderLeft =
