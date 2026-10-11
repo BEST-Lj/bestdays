@@ -11,6 +11,25 @@
 	transition: opacity 0.7s ease;
 }
 
+body:has(div.container-fluid.partners-special) .silver {
+    margin-bottom: unset;
+    padding-bottom: 15vh;
+}
+
+body:has(div.container-fluid.partners-special) {
+    padding-top: 6vh;
+}
+
+div.container-fluid.partners-special {
+	width: 100%;
+	margin-top: unset !important;
+	margin-bottom: unset !important;
+	background-color: white;
+}
+
+
+
+
 .team-div {
 	display: flex;
 	grid-area: 1 / 1;
@@ -57,7 +76,7 @@
 	margin: 1rem 0px;
 }
 
-.diamond {
+/*.diamond {
 	--border-color: var(--main-blue);
 }
 
@@ -67,7 +86,7 @@
 
 .silver {
 	--border-color: #c0c0c0;
-}
+}*/
 
 .partner:hover {
 	cursor: pointer;
@@ -76,6 +95,7 @@
 }
 
 .sponsor-title {
+    color: var(--main-blue);
 	font-size: 6vw;
 	font-weight: 700;
 	text-align: center;

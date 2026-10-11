@@ -6,6 +6,13 @@
     "asset": "/assets/partners/bankart.svg"
   },
   {
+     "name": "Lek",
+     "grade": "gold",
+     
+     "info": "<p>Lek je slovenska, evropska in globalna farmacevtska družba, ki je osredotočena na ljudi in usmerjena v prihodnost. Je tudi prva in najstarejša sodobna <b>farmacevtska družba v državi</b>, ki razvija, proizvaja in trži učinkovita, varna in visokokakovostna <b>zdravila ter aktivne farmacevtske sestavine</b>.</p><p>Lek ima več lokacij po Sloveniji, ki vključujejo razvojni center in večproizvodnih centrov. Razvoj in proizvodnja aktivnih farmacevtskih sestavin in zdravil potekata v skladu s <b>strogimi mednarodnimi standardi</b>. Ti zagotavljajo kakovost, varnost in učinkovitost izdelkov podjetja. Družba stremi h <b>kakovosti na vsakem koraku</b>, saj je ta vgrajena v njeno vsakodnevno delo ter se kaže v zaupanju in spoštovanju do sodelavcev, bolnikov in poslovnih partnerjev ter širšega okolja, v katerem deluje. Že več let uspešno opravlja revizije regulativnih organov iz držav po vsem svetu. V vseh delovnih procesih pri razvoju in proizvodnji zdravil ter oskrbi trga izpolnjuje <b>visoke standarde kakovosti</b>, pri čemer imajo ključno vlogo <b>visoko usposobljeni in izkušeni strokovnjaki</b>.</p><p>Verjame v vse večji pomen <b>znanstvenih inovacij</b>, ki omogočajo nove načine za razvoj zdravil ter povečujejo <b>dostopnost do zdravljenja</b>. Njene strateške prednostne naloge so <b>inovacije</b>, <b>operativna odličnost</b>, <b>podatki in digitalna tehnologija</b> ter <b>krepitev zaupanja v družbi</b>. Na poti k novim odkritjem se povezuje z znanstvenoraziskovalnimi organizacijami v Sloveniji in tujini.</p>",
+     "asset": "/assets/partners/lek.png"
+   },
+  {
     "name": "Novartis",
     "grade": "gold",
     "info": "<p><b>Novartis</b> je <b>prvo farmacevtsko podjetje za inovativna zdravila</b> v zgodovini <b>slovenske farmacevtske industrije</b>.</p><p>Smo <b>ena ključnih Novartisovih lokacij</b>, z močnim znanjem in ekspertizami v <b>razvoju</b>, <b>proizvodnji</b>, <b>trženju</b> in različnih <b>storitev</b>, ki jih naši timi v Sloveniji opravljajo tako za naše kot za Novartisove lokacije po vsem svetu.</p><p>S svojimi <b>izkušnjami</b>, <b>znanjem</b> in <b>kakovostjo</b> smo <b>pomemben del Novartisa</b>, saj v različnih fazah <b>razvoja</b>, <b>proizvodnje</b> in <b>storitev</b> podpiramo <b>polovico Novartisovih prednostnih inovativnih zdravil</b>.</p><p>Vključeni smo v vseh <b>pet Novartisovih visokotehnoloških platform</b> (<b>kemijska platforma</b>, <b>bioterapevtiki</b>, <b>xRNA</b>, <b>radioligandi</b>, <b>celična in genska terapija</b>).</p><p>Skupaj zaposlujemo <b>več kot 3.900 sodelavcev</b> na naših lokacijah v <b>Ljubljani</b>, <b>Mengšu</b> in <b>Slovenj Gradcu</b>.</p>",
