@@ -27,9 +27,6 @@ div.container-fluid.partners-special {
 	background-color: white;
 }
 
-
-
-
 .team-div {
 	display: flex;
 	grid-area: 1 / 1;
@@ -55,7 +52,6 @@ div.container-fluid.partners-special {
 	position: relative;
 	z-index: 1;
 	background-color: white;
-	border-radius: 50%;
 	width: 250px;
 	height: 250px;
 	object-fit: contain;
